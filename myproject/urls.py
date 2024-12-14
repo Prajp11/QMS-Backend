@@ -30,14 +30,25 @@ Including another URLconf
 #    path('api/', include('api.urls')),  # yourapp should be replaced with your app name
 # ]
 
+#main urls
+# from django.contrib import admin  # Import the admin module
+# from django.urls import path, include
+# from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),  # Admin path, now working
+#     path('api/', include('api.urls')),
+#     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+#     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+# ]
 
 from django.contrib import admin  # Import the admin module
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Admin path, now working
-    path('api/', include('api.urls')),
+    path('admin/', admin.site.urls),  # Admin path
+    path('api/', include('api.urls')),  # Include the API's URLs
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

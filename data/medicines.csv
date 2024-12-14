@@ -1,0 +1,147 @@
+Medicine_Name,Manufacture_Date,Expiry_Date,Batch_No,Supplier,Temperature (°C),Humidity (%),pH_Level,Contaminant_Level (ppm),Active_Ingredient_Purity (%),Inspected_By,Accepted_or_Rejected
+Paracetamol,1/15/2023,1/15/2025,PCT-12345,HealthCare Pharma Ltd,25,45,6.5,1.2,99.5,John Smith,Accepted
+Ibuprofen,2/10/2023,2/10/2026,IBP-23456,MedSupply Solutions,23,50,7,0.8,98.7,Sarah Johnson,Accepted
+Amoxicillin,3/12/2022,3/12/2025,AMX-34567,MedPharma Industries,24,52,6.8,2,97.8,Dr. Emily Clark,Rejected
+Cetirizine,4/5/2022,4/5/2024,CTZ-45678,Lifeline Pharmaceuticals,22,48,7.2,0.5,99.1,Michael Lee,Accepted
+Metformin,5/20/2023,5/20/2026,MTF-56789,Global Pharma Supplies,26,47,6.4,1,98.9,Dr. Jane Doe,Accepted
+Atenolol,6/25/2021,6/25/2024,ATN-67890,HealthLink Pharmaceuticals,24,53,7.5,1.4,99.2,Dr. Sam Brown,Rejected
+Amlodipine,7/10/2023,7/10/2025,AML-78901,CareMeds International,23,50,7.1,0.9,98.5,John Doe,Accepted
+Omeprazole,8/5/2022,8/5/2025,OMP-89012,PharmaOne Corp,22,49,6,1.3,99,Sarah White,Accepted
+Simvastatin,9/1/2022,9/1/2024,SMV-90123,Medico Health Supplies,25,46,6.7,0.7,99.3,Dr. Mike Johnson,Accepted
+Aspirin,10/15/2023,10/15/2026,ASP-01234,MedSupply Solutions,24,52,6.9,0.5,98.4,Emily Clarke,Accepted
+Diclofenac,11/20/2023,11/20/2025,DCF-02345,Lifeline Pharmaceuticals,26,47,6.3,1.1,99.2,Dr. Sarah Wilson,Accepted
+Ciprofloxacin,12/12/2022,12/12/2025,CPF-13456,CareMeds International,22,50,7.2,1.2,98,John Smith,Rejected
+Azithromycin,1/30/2023,1/30/2026,AZM-24567,HealthCare Pharma Ltd,23,48,6.5,0.9,98.7,Sarah Johnson,Accepted
+Doxycycline,2/14/2021,2/14/2023,DOX-35678,PharmaOne Corp,25,49,7.4,0.6,99.6,Dr. Emily Clark,Accepted
+Ranitidine,3/10/2023,3/10/2025,RNT-46789,Global Pharma Supplies,24,45,6.8,1.3,98.9,Dr. Sam Brown,Rejected
+Losartan,4/21/2022,4/21/2025,LOS-57890,Medico Health Supplies,23,53,7,0.4,99.4,John Doe,Accepted
+Levothyroxine,5/1/2023,5/1/2026,LVT-68901,Lifeline Pharmaceuticals,25,47,7.3,0.8,99,Sarah White,Accepted
+Metoprolol,6/15/2023,6/15/2026,MTP-79012,CareMeds International,22,46,6.5,1.5,98.2,Dr. Mike Johnson,Rejected
+Clopidogrel,7/20/2021,7/20/2024,CLP-80123,HealthLink Pharmaceuticals,24,49,6.6,1.2,99.1,John Smith,Accepted
+Lisinopril,8/10/2022,8/10/2024,LSN-91234,Global Pharma Supplies,23,50,7.1,0.6,98.9,Sarah Johnson,Accepted
+Hydrochlorothiazide,9/12/2023,9/12/2025,HCT-02345,MedPharma Industries,25,48,7.2,1,98.7,Dr. Emily Clark,Accepted
+Prednisolone,10/11/2022,10/11/2024,PDL-13456,PharmaOne Corp,24,52,6.9,0.5,99.3,John Doe,Accepted
+Furosemide,11/2/2023,11/2/2025,FRS-24567,Medico Health Supplies,26,50,6.8,1.1,99,Dr. Sam Brown,Accepted
+Alprazolam,12/15/2022,12/15/2024,ALP-35678,HealthCare Pharma Ltd,22,47,7,1,98.8,Sarah White,Rejected
+Atorvastatin,1/10/2021,1/10/2024,ATR-46789,Lifeline Pharmaceuticals,24,45,7.1,1.3,98.9,John Smith,Accepted
+Fluconazole,2/25/2023,2/25/2026,FLZ-57890,PharmaOne Corp,23,51,7.3,0.9,99.4,Dr. Emily Clark,Accepted
+Sildenafil,3/5/2023,3/5/2025,SLD-68901,MedSupply Solutions,24,46,6.4,1.4,99.2,Sarah Johnson,Accepted
+Amiodarone,4/15/2022,4/15/2024,AMD-79012,Global Pharma Supplies,25,48,7.2,0.7,99.1,Dr. Mike Johnson,Accepted
+Warfarin,5/20/2023,5/20/2025,WRN-80123,HealthLink Pharmaceuticals,23,50,6.5,0.9,99,John Doe,Accepted
+Paracetamol,1/15/2023,1/15/2025,PCT-12345,HealthCare Pharma Ltd,25,45,6.5,1.2,99.5,John Smith,Accepted
+Ibuprofen,2/10/2023,2/10/2026,IBP-23456,MedSupply Solutions,23,50,7,0.8,98.7,Sarah Johnson,Accepted
+Amoxicillin,3/12/2022,3/12/2025,AMX-34567,MedPharma Industries,24,52,6.8,2,97.8,Dr. Emily Clark,Rejected
+Cetirizine,4/5/2022,4/5/2024,CTZ-45678,Lifeline Pharmaceuticals,22,48,7.2,0.5,99.1,Michael Lee,Accepted
+Metformin,5/20/2023,5/20/2026,MTF-56789,Global Pharma Supplies,26,47,6.4,1,98.9,Dr. Jane Doe,Accepted
+Atenolol,6/25/2021,6/25/2024,ATN-67890,HealthLink Pharmaceuticals,24,53,7.5,1.4,99.2,Dr. Sam Brown,Rejected
+Amlodipine,7/10/2023,7/10/2025,AML-78901,CareMeds International,23,50,7.1,0.9,98.5,John Doe,Accepted
+Omeprazole,8/5/2022,8/5/2025,OMP-89012,PharmaOne Corp,22,49,6,1.3,99,Sarah White,Accepted
+Simvastatin,9/1/2022,9/1/2024,SMV-90123,Medico Health Supplies,25,46,6.7,0.7,99.3,Dr. Mike Johnson,Accepted
+Aspirin,10/15/2023,10/15/2026,ASP-01234,MedSupply Solutions,24,52,6.9,0.5,98.4,Emily Clarke,Accepted
+Diclofenac,11/20/2023,11/20/2025,DCF-02345,Lifeline Pharmaceuticals,26,47,6.3,1.1,99.2,Dr. Sarah Wilson,Accepted
+Ciprofloxacin,12/12/2022,12/12/2025,CPF-13456,CareMeds International,22,50,7.2,1.2,98,John Smith,Rejected
+Azithromycin,1/30/2023,1/30/2026,AZM-24567,HealthCare Pharma Ltd,23,48,6.5,0.9,98.7,Sarah Johnson,Accepted
+Doxycycline,2/14/2021,2/14/2023,DOX-35678,PharmaOne Corp,25,49,7.4,0.6,99.6,Dr. Emily Clark,Accepted
+Ranitidine,3/10/2023,3/10/2025,RNT-46789,Global Pharma Supplies,24,45,6.8,1.3,98.9,Dr. Sam Brown,Rejected
+Losartan,4/21/2022,4/21/2025,LOS-57890,Medico Health Supplies,23,53,7,0.4,99.4,John Doe,Accepted
+Levothyroxine,5/1/2023,5/1/2026,LVT-68901,Lifeline Pharmaceuticals,25,47,7.3,0.8,99,Sarah White,Accepted
+Metoprolol,6/15/2023,6/15/2026,MTP-79012,CareMeds International,22,46,6.5,1.5,98.2,Dr. Mike Johnson,Rejected
+Clopidogrel,7/20/2021,7/20/2024,CLP-80123,HealthLink Pharmaceuticals,24,49,6.6,1.2,99.1,John Smith,Accepted
+Lisinopril,8/10/2022,8/10/2024,LSN-91234,Global Pharma Supplies,23,50,7.1,0.6,98.9,Sarah Johnson,Accepted
+Hydrochlorothiazide,9/12/2023,9/12/2025,HCT-02345,MedPharma Industries,25,48,7.2,1,98.7,Dr. Emily Clark,Accepted
+Prednisolone,10/11/2022,10/11/2024,PDL-13456,PharmaOne Corp,24,52,6.9,0.5,99.3,John Doe,Accepted
+Furosemide,11/2/2023,11/2/2025,FRS-24567,Medico Health Supplies,26,50,6.8,1.1,99,Dr. Sam Brown,Accepted
+Alprazolam,12/15/2022,12/15/2024,ALP-35678,HealthCare Pharma Ltd,22,47,7,1,98.8,Sarah White,Rejected
+Atorvastatin,1/10/2021,1/10/2024,ATR-46789,Lifeline Pharmaceuticals,24,45,7.1,1.3,98.9,John Smith,Accepted
+Fluconazole,2/25/2023,2/25/2026,FLZ-57890,PharmaOne Corp,23,51,7.3,0.9,99.4,Dr. Emily Clark,Accepted
+Sildenafil,3/5/2023,3/5/2025,SLD-68901,MedSupply Solutions,24,46,6.4,1.4,99.2,Sarah Johnson,Accepted
+Amiodarone,4/15/2022,4/15/2024,AMD-79012,Global Pharma Supplies,25,48,7.2,0.7,99.1,Dr. Mike Johnson,Accepted
+Warfarin,5/20/2023,5/20/2025,WRN-80123,HealthLink Pharmaceuticals,23,50,6.5,0.9,99,,
+Loratadine,6/10/2023,6/10/2026,LRT-09123,Lifeline Pharmaceuticals,22,45,6.8,0.7,98.9,Sarah White,Accepted
+Levocetirizine,4/10/2022,4/10/2024,LVC-01234,HealthLink Pharmaceuticals,24,47,7,1.1,99.3,Dr. Emily Clark,Accepted
+Clindamycin,3/20/2023,3/20/2026,CLD-12345,MedSupply Solutions,26,50,6.5,0.9,98.5,John Smith,Rejected
+Dexamethasone,8/15/2021,8/15/2023,DXT-23456,PharmaOne Corp,23,46,7.1,1.3,99.1,Dr. Mike Johnson,Accepted
+Sulfasalazine,5/10/2022,5/10/2025,SLF-34567,HealthCare Pharma Ltd,25,49,7.4,0.8,98.8,Sarah Johnson,Accepted
+Propranolol,7/25/2023,7/25/2026,PRP-45678,MedPharma Industries,24,50,6.6,1.2,98.7,John Doe,Accepted
+Hydroxychloroquine,8/20/2022,8/20/2025,HCQ-56789,Global Pharma Supplies,26,48,6.3,0.7,99.2,Dr. Jane Doe,Accepted
+Mefenamic Acid,9/5/2021,9/5/2024,MFA-67890,Lifeline Pharmaceuticals,23,47,7.2,0.6,98.9,Sarah White,Accepted
+Quetiapine,10/1/2023,10/1/2026,QTP-78901,HealthLink Pharmaceuticals,22,49,6.8,1,99.1,Dr. Sam Brown,Accepted
+Fluvoxamine,11/12/2022,11/12/2024,FLX-89012,MedSupply Solutions,24,48,7.3,0.9,98.8,Michael Lee,Accepted
+Imipramine,12/15/2023,12/15/2026,IMP-90123,Global Pharma Supplies,25,46,6.7,1.1,98.7,Dr. Emily Clark,Accepted
+Sertraline,1/20/2021,1/20/2024,SRT-01234,HealthCare Pharma Ltd,26,47,6.9,0.6,98.9,Sarah Johnson,Accepted
+Acetazolamide,2/15/2023,2/15/2026,ACT-12345,PharmaOne Corp,22,49,7,0.8,99.2,John Doe,Accepted
+Enalapril,3/20/2022,3/20/2025,ENL-23456,Lifeline Pharmaceuticals,23,48,6.4,1.2,98.6,Dr. Mike Johnson,Rejected
+Fentanyl,4/5/2022,4/5/2024,FTL-34567,HealthLink Pharmaceuticals,24,50,7.5,0.7,99.4,John Smith,Accepted
+Methotrexate,5/20/2021,5/20/2024,MTX-45678,MedSupply Solutions,25,47,6.6,0.5,98.3,Sarah White,Accepted
+Ketorolac,6/15/2022,6/15/2025,KTR-56789,Global Pharma Supplies,23,51,6.9,1.4,99,Dr. Sam Brown,Rejected
+Tramadol,7/12/2023,7/12/2026,TRD-67890,PharmaOne Corp,24,50,7.3,1.1,98.7,Michael Lee,Accepted
+Montelukast,8/1/2022,8/1/2025,MNT-78901,HealthCare Pharma Ltd,26,45,6.5,0.9,99.1,Dr. Jane Doe,Accepted
+Oxybutynin,9/25/2021,9/25/2024,OXY-89012,Lifeline Pharmaceuticals,22,46,7.2,1.3,99.3,Sarah Johnson,Accepted
+Verapamil,10/11/2022,10/11/2024,VRP-90123,Global Pharma Supplies,24,50,6.8,1,98.6,John Doe,Accepted
+Diltiazem,11/5/2023,11/5/2026,DLT-01234,MedSupply Solutions,25,49,7,0.7,99.4,Dr. Sam Brown,Accepted
+Carvedilol,12/20/2023,12/20/2026,CRV-12345,HealthLink Pharmaceuticals,23,46,6.7,0.8,99.1,John Smith,Accepted
+Clonidine,1/15/2022,1/15/2024,CLD-23456,Lifeline Pharmaceuticals,26,48,6.4,1.2,98.7,Dr. Mike Johnson,Rejected
+Gabapentin,2/28/2023,2/28/2026,GBP-34567,Global Pharma Supplies,22,45,7.2,0.6,98.8,Sarah White,Accepted
+Pregabalin,3/22/2022,3/22/2025,PRG-45678,HealthCare Pharma Ltd,23,50,6.8,0.9,98.5,John Doe,Accepted
+Olanzapine,4/18/2021,4/18/2024,OLN-56789,MedSupply Solutions,25,49,7.3,1,99,Dr. Jane Doe,Accepted
+Risperidone,5/11/2022,5/11/2024,RSP-67890,Global Pharma Supplies,26,47,6.5,1.1,98.9,Michael Lee,Accepted
+Amlodipine,6/9/2023,6/9/2026,AML-78901,HealthLink Pharmaceuticals,24,48,7.1,0.8,99.1,John Smith,Accepted
+Hydrochlorothiazide,7/19/2022,7/19/2025,HCT-89012,Lifeline Pharmaceuticals,22,46,7,0.6,99.2,Dr. Mike Johnson,Accepted
+Azithromycin,3/15/2021,3/15/2023,AZT-01234,HealthLink Pharmaceuticals,23,47,7.1,0.5,98.7,Sarah White,Accepted
+Metformin,2/20/2022,2/20/2025,MTF-56789,Lifeline Pharmaceuticals,24,46,6.4,1.3,99.3,Dr. Emily Clark,Accepted
+Fluconazole,3/25/2023,3/25/2026,FLZ-34567,PharmaOne Corp,22,48,6.7,0.8,99,John Smith,Accepted
+Doxycycline,5/12/2022,5/12/2025,DOX-67890,Global Pharma Supplies,26,50,6.5,1,99.4,Dr. Mike Johnson,Accepted
+Ciprofloxacin,7/18/2021,7/18/2023,CPF-90123,MedSupply Solutions,25,49,6.8,0.7,98.9,Sarah Johnson,Accepted
+Levofloxacin,8/1/2023,8/1/2026,LVF-23456,HealthCare Pharma Ltd,24,48,7.2,0.6,98.5,John Doe,Accepted
+Atorvastatin,9/5/2022,9/5/2025,ATR-45678,Lifeline Pharmaceuticals,22,46,6.6,1.1,99.2,Dr. Sam Brown,Accepted
+Pravastatin,10/10/2021,10/10/2024,PRV-56789,Global Pharma Supplies,25,49,7,0.9,98.7,Michael Lee,Accepted
+Simvastatin,11/12/2023,11/12/2026,SMV-67890,HealthLink Pharmaceuticals,23,50,6.9,0.7,98.8,Dr. Emily Clark,Accepted
+Rivaroxaban,1/5/2022,1/5/2024,RVX-78901,MedSupply Solutions,26,48,6.5,1.2,99,Sarah White,Accepted
+Apixaban,2/22/2021,2/22/2024,APX-89012,Lifeline Pharmaceuticals,24,47,7.1,1,99.3,John Smith,Accepted
+Digoxin,3/15/2023,3/15/2026,DGX-01234,HealthCare Pharma Ltd,22,45,6.8,0.9,98.6,Dr. Jane Doe,Accepted
+Furosemide,4/20/2022,4/20/2025,FRM-12345,Global Pharma Supplies,25,46,7,1.1,98.7,Sarah Johnson,Accepted
+Spironolactone,5/11/2021,5/11/2024,SPR-23456,MedSupply Solutions,24,48,6.7,0.8,99.4,John Doe,Accepted
+Allopurinol,6/8/2023,6/8/2026,ALP-34567,Lifeline Pharmaceuticals,23,50,6.9,0.6,99.1,Dr. Sam Brown,Accepted
+Methimazole,7/25/2022,7/25/2025,MTM-45678,PharmaOne Corp,25,49,7.2,1.3,99,Michael Lee,Accepted
+Amiodarone,8/19/2021,8/19/2024,AMD-56789,HealthLink Pharmaceuticals,22,47,6.6,0.7,98.9,Dr. Emily Clark,Accepted
+Lisinopril,9/12/2022,9/12/2025,LSN-67890,Global Pharma Supplies,23,48,7.1,0.8,99.2,Sarah White,Accepted
+Clopidogrel,10/10/2023,10/10/2026,CLP-78901,MedSupply Solutions,24,50,6.5,0.9,99.4,John Smith,Accepted
+Losartan,1/25/2022,1/25/2025,LST-89012,HealthCare Pharma Ltd,25,49,7,1.2,98.8,Dr. Jane Doe,Accepted
+Isosorbide,2/10/2021,2/10/2024,ISO-01234,PharmaOne Corp,23,48,6.9,0.8,98.5,Sarah Johnson,Accepted
+Amlodipine,3/5/2023,3/5/2026,AML-12345,HealthLink Pharmaceuticals,24,47,7.2,0.6,99,John Doe,Accepted
+Simvastatin,4/10/2022,4/10/2025,SMV-23456,Lifeline Pharmaceuticals,26,50,6.7,0.7,98.9,Dr. Mike Johnson,Accepted
+Warfarin,5/12/2023,5/12/2026,WRN-34567,Global Pharma Supplies,25,48,6.5,1.1,99.2,Sarah White,Accepted
+Isoniazid,6/25/2021,6/25/2024,ISO-45678,MedSupply Solutions,24,49,6.9,1,98.6,John Smith,Accepted
+Rifampin,7/1/2022,7/1/2025,RIF-56789,HealthLink Pharmaceuticals,23,50,7.1,0.7,99.1,Dr. Emily Clark,Accepted
+Pyrazinamide,8/15/2023,8/15/2026,PYZ-67890,Global Pharma Supplies,25,48,6.4,0.9,98.5,Sarah Johnson,Accepted
+Ethambutol,9/20/2021,9/20/2024,ETM-78901,Lifeline Pharmaceuticals,24,47,7,1.2,99.3,John Doe,Accepted
+Propranolol,10/5/2022,10/5/2025,PRP-89012,PharmaOne Corp,26,49,6.7,0.6,98.8,Dr. Sam Brown,Accepted
+Metoprolol,11/10/2023,11/10/2026,MTP-01234,Global Pharma Supplies,22,46,7.1,0.9,99,Sarah White,Accepted
+Enalapril,7/10/2021,7/10/2024,ENL-45678,HealthLink Pharmaceuticals,23,48,6.7,0.9,98.8,John Smith,Accepted
+Bisoprolol,8/12/2022,8/12/2025,BSP-56789,Lifeline Pharmaceuticals,24,49,7.2,0.8,99,Dr. Emily Clark,Accepted
+Carvedilol,9/15/2023,9/15/2026,CRV-67890,PharmaOne Corp,22,47,6.5,1.2,99.2,Michael Lee,Accepted
+Diltiazem,10/25/2021,10/25/2024,DLT-78901,Global Pharma Supplies,25,50,7.1,0.6,98.9,Sarah White,Accepted
+Verapamil,11/10/2022,11/10/2025,VRP-89012,MedSupply Solutions,23,48,6.9,1,99.4,John Smith,Accepted
+Hydralazine,1/5/2023,1/5/2026,HDR-01234,HealthCare Pharma Ltd,24,49,6.8,0.7,99.1,Dr. Sam Brown,Accepted
+Nitrofurantoin,2/15/2022,2/15/2025,NTF-12345,Lifeline Pharmaceuticals,25,46,7,1.1,98.7,Dr. Jane Doe,Accepted
+Amoxicillin,3/25/2021,3/25/2024,AMX-23456,Global Pharma Supplies,26,50,6.7,0.6,99.3,Michael Lee,Accepted
+Clarithromycin,4/30/2023,4/30/2026,CLR-34567,HealthLink Pharmaceuticals,22,48,7.2,0.9,98.6,Sarah White,Accepted
+Cefuroxime,5/18/2022,5/18/2025,CFX-45678,MedSupply Solutions,24,49,6.9,0.7,98.9,John Smith,Accepted
+Erythromycin,6/23/2023,6/23/2026,ERY-56789,PharmaOne Corp,23,46,6.5,1.3,99,Dr. Emily Clark,Accepted
+Sulfamethoxazole,7/9/2021,7/9/2024,SFX-67890,HealthCare Pharma Ltd,25,50,6.8,0.8,99.2,Sarah White,Accepted
+Trimethoprim,8/12/2022,8/12/2025,TRM-78901,Global Pharma Supplies,24,47,7,0.9,99.4,Dr. Sam Brown,Accepted
+Vancomycin,9/21/2021,9/21/2024,VAN-89012,MedSupply Solutions,26,48,6.7,1.2,98.8,John Doe,Accepted
+Moxifloxacin,10/29/2022,10/29/2025,MXF-01234,Lifeline Pharmaceuticals,23,50,6.9,0.7,99.1,Michael Lee,Accepted
+Levofloxacin,11/15/2023,11/15/2026,LVF-12345,HealthLink Pharmaceuticals,24,49,7.1,0.6,98.9,Sarah White,Accepted
+Gatifloxacin,12/12/2021,12/12/2024,GTF-23456,Global Pharma Supplies,25,47,6.5,1,99.2,John Smith,Accepted
+Daptomycin,1/8/2022,1/8/2025,DPT-34567,MedSupply Solutions,23,48,7.2,0.8,99,Dr. Emily Clark,Accepted
+Colistin,2/23/2023,2/23/2026,CLS-45678,Lifeline Pharmaceuticals,24,49,6.9,0.9,98.7,Michael Lee,Accepted
+Polymyxin B,3/12/2021,3/12/2024,PMB-56789,PharmaOne Corp,25,50,6.7,1.1,99.1,John Doe,Accepted
+Imipenem,4/30/2022,4/30/2025,IMP-67890,Global Pharma Supplies,23,46,7.1,0.8,99.4,Dr. Sam Brown,Accepted
+Meropenem,5/18/2023,5/18/2026,MRP-78901,HealthCare Pharma Ltd,24,49,6.9,0.6,98.9,Sarah White,Accepted
+Tetracycline,6/11/2021,6/11/2024,TTC-89012,MedSupply Solutions,26,48,6.5,1.2,99.2,John Smith,Accepted
+Demeclocycline,7/19/2022,7/19/2025,DMC-01234,PharmaOne Corp,23,47,6.8,0.9,98.7,Michael Lee,Accepted
+Minocycline,8/15/2023,8/15/2026,MNC-12345,Lifeline Pharmaceuticals,24,50,7,0.7,98.6,Sarah White,Accepted
+Tigecycline,9/25/2021,9/25/2024,TGC-23456,Global Pharma Supplies,25,46,7.1,1,99,John Doe,Accepted
+Cefepime,10/30/2022,10/30/2025,CFP-34567,HealthLink Pharmaceuticals,23,48,6.7,0.8,99.2,Dr. Emily Clark,Accepted
+Cephalexin,11/22/2023,11/22/2026,CPX-45678,MedSupply Solutions,24,49,6.9,0.7,98.8,Michael Lee,Accepted

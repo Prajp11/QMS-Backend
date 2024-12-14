@@ -14,6 +14,19 @@
 #     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 # ]
 
+
+#main urls
+# from django.urls import path, include
+# from rest_framework.routers import DefaultRouter
+# from .views import ItemViewSet
+
+# router = DefaultRouter()
+# router.register(r'items', ItemViewSet)
+
+# urlpatterns = [
+#     path('', include(router.urls)),  # Correct, no recursion or leading slash
+# ]
+
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import ItemViewSet
@@ -22,7 +35,7 @@ router = DefaultRouter()
 router.register(r'items', ItemViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),  # Correct, no recursion or leading slash
+    path('', include(router.urls)),
 ]
 
 
