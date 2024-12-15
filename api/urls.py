@@ -31,11 +31,13 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import ItemViewSet
 
+# Create a router and register the ItemViewSet
 router = DefaultRouter()
-router.register(r'items', ItemViewSet)
+router.register(r'items', ItemViewSet, basename='item')
 
+# Define the app's URL patterns
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', include(router.urls)),  # Includes all routes for the ItemViewSet
 ]
 
 
