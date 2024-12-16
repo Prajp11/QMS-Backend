@@ -5,9 +5,10 @@ from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
-SECRET_KEY = 'django-insecure--*oq8-$$wa%^lx6%^j24=fxd#@1hp(=le-8jkw)32_g6-#se3!'  # Replace with a secure key
+SECRET_KEY = 'e99j$9&km9opfi689l&75m^9o2wf5g-grj-$i$_fld!h04f2o5'  # Updated with new key
 
 DEBUG = True
+
 
 ALLOWED_HOSTS = []  # Add allowed hosts in production
 
