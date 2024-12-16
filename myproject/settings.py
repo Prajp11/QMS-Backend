@@ -1,21 +1,16 @@
 from pathlib import Path
 from datetime import timedelta
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Correct the BASE_DIR definition to reference the current file path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+SECRET_KEY = 'django-insecure--*oq8-$$wa%^lx6%^j24=fxd#@1hp(=le-8jkw)32_g6-#se3!'  # Replace with a secure key
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--*oq8-$$wa%^lx6%^j24=fxd#@1hp(=le-8jkw)32_g6-#se3!'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []  # Add your domain in production
+ALLOWED_HOSTS = []  # Add allowed hosts in production
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -23,7 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',  # CORS Headers for cross-origin requests
+    'corsheaders',  # Add CORS headers
     'api',  # Your app
     'rest_framework',  # Django REST Framework
 ]
@@ -39,13 +34,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS settings
+# CORS settings - adjust to fit your development or production needs
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React frontend URL
 ]
 
-# For development, allow all origins if needed (uncomment for local testing)
-# CORS_ALLOW_ALL_ORIGINS = True
+# For development, you can enable this
+# CORS_ALLOW_ALL_ORIGINS = True  # Uncomment for development
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -79,7 +74,7 @@ DATABASES = {
     }
 }
 
-# Password validation
+# Password validation settings
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -95,25 +90,25 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# REST Framework and JWT Authentication
+# REST Framework and JWT Authentication settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticated',
-    # ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # Ensure that authentication is required
+    ],
 }
 
 # JWT settings (Simple JWT)
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),  # Set the token expiry time
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),  # Refresh token expiry time
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
 }
 
-# Internationalization
+# Localization settings
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -125,8 +120,8 @@ STATIC_URL = 'static/'
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Add this to append a slash automatically to the end of URLs
+# Additional settings for appending slashes
 APPEND_SLASH = True
 
-# ALLOWED_HOSTS setup for production (update with your domain)
+# In production, ensure you add a specific list of allowed hosts
 # ALLOWED_HOSTS = ['your-domain.com']
