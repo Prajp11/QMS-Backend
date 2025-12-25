@@ -1,18 +1,60 @@
 from django.db import models
+from django.utils import timezone
+from datetime import datetime
 
 class Item(models.Model):
-    name = models.CharField(max_length=100)  # Medicine_Name
-    manufacture_date = models.DateField(default='2000-01-01')  # Provide a default date, e.g., '2000-01-01'
-    expiry_date = models.DateField(default='2100-01-01')  # Default date in the future for safety
-    batch_number = models.CharField(max_length=100, default='Unknown')  # Default value for batch_number
-    supplier = models.CharField(max_length=255, default='Unknown')  # Default value for supplier
-    temperature = models.FloatField(default=0.0)  # Default for temperature
-    humidity = models.FloatField(default=0.0)  # Default for humidity
-    ph_level = models.FloatField(default=0.0)  # Default for pH_Level
-    contaminant_level = models.FloatField(default=0.0)  # Default for Contaminant_Level
-    active_ingredient_purity = models.FloatField(default=0.0)  # Default for Active_Ingredient_Purity
-    inspected_by = models.CharField(max_length=255, default='Unknown')  # Default for Inspected_By
-    accepted_or_rejected = models.CharField(max_length=50, default='Unknown')  # Default for Accepted_or_Rejected
+    # Basic Medicine Information (existing fields from migration 0002)
+    name = models.CharField(max_length=100)  # Keep original max_length from migration
+    batch_number = models.CharField(max_length=100, default='Unknown')
+    manufacture_date = models.DateField(default='2000-01-01')
+    expiry_date = models.DateField(default='2100-01-01')
+    
+    # New fields we need to add
+    quantity = models.IntegerField(default=0)
+    manufacturer = models.CharField(max_length=200, default='Unknown')
+    category = models.CharField(max_length=100, default='General')
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    
+    # Quality Control Information (existing fields from migration 0002)
+    supplier = models.CharField(max_length=255, default='Unknown')
+    temperature = models.FloatField(default=0.0)
+    humidity = models.FloatField(default=0.0)
+    ph_level = models.FloatField(default=0.0)
+    contaminant_level = models.FloatField(default=0.0)
+    active_ingredient_purity = models.FloatField(default=0.0)
+    inspected_by = models.CharField(max_length=255, default='Unknown')
+    accepted_or_rejected = models.CharField(max_length=50, default='Unknown')
+    
+    # Timestamps - new fields
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
-    def _str_(self):
-        return self.name
+    class Meta:
+        ordering = ['expiry_date']
+
+    def __str__(self):
+        return f"{self.name} - {self.batch_number}"
+
+    @property
+    def days_until_expiry(self):
+        """Calculate days until expiry"""
+        today = timezone.now().date()
+        return (self.expiry_date - today).days
+
+    @property
+    def expiry_status(self):
+        """Return expiry status based on days left"""
+        days_left = self.days_until_expiry
+        if days_left < 0:
+            return 'expired'
+        elif days_left <= 7:
+            return 'urgent'
+        elif days_left <= 30:
+            return 'warning'
+        else:
+            return 'safe'
+
+    @property
+    def is_expired(self):
+        """Check if medicine is expired"""
+        return self.days_until_expiry < 0

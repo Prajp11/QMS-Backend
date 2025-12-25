@@ -37,11 +37,12 @@ MIDDLEWARE = [
 
 # CORS settings - adjust to fit your development or production needs
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React frontend URL
+    "http://localhost:3000",
+    "http://localhost:3001"  # React frontend URL
 ]
 
 # For development, you can enable this
-# CORS_ALLOW_ALL_ORIGINS = True  # Uncomment for development
+CORS_ALLOW_ALL_ORIGINS = True  # Enabled for development
 
 ROOT_URLCONF = 'myproject.urls'
 
