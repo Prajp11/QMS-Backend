@@ -1,147 +1,571 @@
 Medicine_Name,Manufacture_Date,Expiry_Date,Batch_No,Supplier,Temperature (°C),Humidity (%),pH_Level,Contaminant_Level (ppm),Active_Ingredient_Purity (%),Inspected_By,Accepted_or_Rejected
-Paracetamol,1/15/2023,1/15/2025,PCT-12345,HealthCare Pharma Ltd,25,45,6.5,1.2,99.5,John Smith,Accepted
-Ibuprofen,2/10/2023,2/10/2026,IBP-23456,MedSupply Solutions,23,50,7,0.8,98.7,Sarah Johnson,Accepted
-Amoxicillin,3/12/2022,3/12/2025,AMX-34567,MedPharma Industries,24,52,6.8,2,97.8,Dr. Emily Clark,Rejected
-Cetirizine,4/5/2022,4/5/2024,CTZ-45678,Lifeline Pharmaceuticals,22,48,7.2,0.5,99.1,Michael Lee,Accepted
-Metformin,5/20/2023,5/20/2026,MTF-56789,Global Pharma Supplies,26,47,6.4,1,98.9,Dr. Jane Doe,Accepted
-Atenolol,6/25/2021,6/25/2024,ATN-67890,HealthLink Pharmaceuticals,24,53,7.5,1.4,99.2,Dr. Sam Brown,Rejected
-Amlodipine,7/10/2023,7/10/2025,AML-78901,CareMeds International,23,50,7.1,0.9,98.5,John Doe,Accepted
-Omeprazole,8/5/2022,8/5/2025,OMP-89012,PharmaOne Corp,22,49,6,1.3,99,Sarah White,Accepted
-Simvastatin,9/1/2022,9/1/2024,SMV-90123,Medico Health Supplies,25,46,6.7,0.7,99.3,Dr. Mike Johnson,Accepted
-Aspirin,10/15/2023,10/15/2026,ASP-01234,MedSupply Solutions,24,52,6.9,0.5,98.4,Emily Clarke,Accepted
-Diclofenac,11/20/2023,11/20/2025,DCF-02345,Lifeline Pharmaceuticals,26,47,6.3,1.1,99.2,Dr. Sarah Wilson,Accepted
-Ciprofloxacin,12/12/2022,12/12/2025,CPF-13456,CareMeds International,22,50,7.2,1.2,98,John Smith,Rejected
-Azithromycin,1/30/2023,1/30/2026,AZM-24567,HealthCare Pharma Ltd,23,48,6.5,0.9,98.7,Sarah Johnson,Accepted
-Doxycycline,2/14/2021,2/14/2023,DOX-35678,PharmaOne Corp,25,49,7.4,0.6,99.6,Dr. Emily Clark,Accepted
-Ranitidine,3/10/2023,3/10/2025,RNT-46789,Global Pharma Supplies,24,45,6.8,1.3,98.9,Dr. Sam Brown,Rejected
-Losartan,4/21/2022,4/21/2025,LOS-57890,Medico Health Supplies,23,53,7,0.4,99.4,John Doe,Accepted
-Levothyroxine,5/1/2023,5/1/2026,LVT-68901,Lifeline Pharmaceuticals,25,47,7.3,0.8,99,Sarah White,Accepted
-Metoprolol,6/15/2023,6/15/2026,MTP-79012,CareMeds International,22,46,6.5,1.5,98.2,Dr. Mike Johnson,Rejected
-Clopidogrel,7/20/2021,7/20/2024,CLP-80123,HealthLink Pharmaceuticals,24,49,6.6,1.2,99.1,John Smith,Accepted
-Lisinopril,8/10/2022,8/10/2024,LSN-91234,Global Pharma Supplies,23,50,7.1,0.6,98.9,Sarah Johnson,Accepted
-Hydrochlorothiazide,9/12/2023,9/12/2025,HCT-02345,MedPharma Industries,25,48,7.2,1,98.7,Dr. Emily Clark,Accepted
-Prednisolone,10/11/2022,10/11/2024,PDL-13456,PharmaOne Corp,24,52,6.9,0.5,99.3,John Doe,Accepted
-Furosemide,11/2/2023,11/2/2025,FRS-24567,Medico Health Supplies,26,50,6.8,1.1,99,Dr. Sam Brown,Accepted
-Alprazolam,12/15/2022,12/15/2024,ALP-35678,HealthCare Pharma Ltd,22,47,7,1,98.8,Sarah White,Rejected
-Atorvastatin,1/10/2021,1/10/2024,ATR-46789,Lifeline Pharmaceuticals,24,45,7.1,1.3,98.9,John Smith,Accepted
-Fluconazole,2/25/2023,2/25/2026,FLZ-57890,PharmaOne Corp,23,51,7.3,0.9,99.4,Dr. Emily Clark,Accepted
-Sildenafil,3/5/2023,3/5/2025,SLD-68901,MedSupply Solutions,24,46,6.4,1.4,99.2,Sarah Johnson,Accepted
-Amiodarone,4/15/2022,4/15/2024,AMD-79012,Global Pharma Supplies,25,48,7.2,0.7,99.1,Dr. Mike Johnson,Accepted
-Warfarin,5/20/2023,5/20/2025,WRN-80123,HealthLink Pharmaceuticals,23,50,6.5,0.9,99,John Doe,Accepted
-Paracetamol,1/15/2023,1/15/2025,PCT-12345,HealthCare Pharma Ltd,25,45,6.5,1.2,99.5,John Smith,Accepted
-Ibuprofen,2/10/2023,2/10/2026,IBP-23456,MedSupply Solutions,23,50,7,0.8,98.7,Sarah Johnson,Accepted
-Amoxicillin,3/12/2022,3/12/2025,AMX-34567,MedPharma Industries,24,52,6.8,2,97.8,Dr. Emily Clark,Rejected
-Cetirizine,4/5/2022,4/5/2024,CTZ-45678,Lifeline Pharmaceuticals,22,48,7.2,0.5,99.1,Michael Lee,Accepted
-Metformin,5/20/2023,5/20/2026,MTF-56789,Global Pharma Supplies,26,47,6.4,1,98.9,Dr. Jane Doe,Accepted
-Atenolol,6/25/2021,6/25/2024,ATN-67890,HealthLink Pharmaceuticals,24,53,7.5,1.4,99.2,Dr. Sam Brown,Rejected
-Amlodipine,7/10/2023,7/10/2025,AML-78901,CareMeds International,23,50,7.1,0.9,98.5,John Doe,Accepted
-Omeprazole,8/5/2022,8/5/2025,OMP-89012,PharmaOne Corp,22,49,6,1.3,99,Sarah White,Accepted
-Simvastatin,9/1/2022,9/1/2024,SMV-90123,Medico Health Supplies,25,46,6.7,0.7,99.3,Dr. Mike Johnson,Accepted
-Aspirin,10/15/2023,10/15/2026,ASP-01234,MedSupply Solutions,24,52,6.9,0.5,98.4,Emily Clarke,Accepted
-Diclofenac,11/20/2023,11/20/2025,DCF-02345,Lifeline Pharmaceuticals,26,47,6.3,1.1,99.2,Dr. Sarah Wilson,Accepted
-Ciprofloxacin,12/12/2022,12/12/2025,CPF-13456,CareMeds International,22,50,7.2,1.2,98,John Smith,Rejected
-Azithromycin,1/30/2023,1/30/2026,AZM-24567,HealthCare Pharma Ltd,23,48,6.5,0.9,98.7,Sarah Johnson,Accepted
-Doxycycline,2/14/2021,2/14/2023,DOX-35678,PharmaOne Corp,25,49,7.4,0.6,99.6,Dr. Emily Clark,Accepted
-Ranitidine,3/10/2023,3/10/2025,RNT-46789,Global Pharma Supplies,24,45,6.8,1.3,98.9,Dr. Sam Brown,Rejected
-Losartan,4/21/2022,4/21/2025,LOS-57890,Medico Health Supplies,23,53,7,0.4,99.4,John Doe,Accepted
-Levothyroxine,5/1/2023,5/1/2026,LVT-68901,Lifeline Pharmaceuticals,25,47,7.3,0.8,99,Sarah White,Accepted
-Metoprolol,6/15/2023,6/15/2026,MTP-79012,CareMeds International,22,46,6.5,1.5,98.2,Dr. Mike Johnson,Rejected
-Clopidogrel,7/20/2021,7/20/2024,CLP-80123,HealthLink Pharmaceuticals,24,49,6.6,1.2,99.1,John Smith,Accepted
-Lisinopril,8/10/2022,8/10/2024,LSN-91234,Global Pharma Supplies,23,50,7.1,0.6,98.9,Sarah Johnson,Accepted
-Hydrochlorothiazide,9/12/2023,9/12/2025,HCT-02345,MedPharma Industries,25,48,7.2,1,98.7,Dr. Emily Clark,Accepted
-Prednisolone,10/11/2022,10/11/2024,PDL-13456,PharmaOne Corp,24,52,6.9,0.5,99.3,John Doe,Accepted
-Furosemide,11/2/2023,11/2/2025,FRS-24567,Medico Health Supplies,26,50,6.8,1.1,99,Dr. Sam Brown,Accepted
-Alprazolam,12/15/2022,12/15/2024,ALP-35678,HealthCare Pharma Ltd,22,47,7,1,98.8,Sarah White,Rejected
-Atorvastatin,1/10/2021,1/10/2024,ATR-46789,Lifeline Pharmaceuticals,24,45,7.1,1.3,98.9,John Smith,Accepted
-Fluconazole,2/25/2023,2/25/2026,FLZ-57890,PharmaOne Corp,23,51,7.3,0.9,99.4,Dr. Emily Clark,Accepted
-Sildenafil,3/5/2023,3/5/2025,SLD-68901,MedSupply Solutions,24,46,6.4,1.4,99.2,Sarah Johnson,Accepted
-Amiodarone,4/15/2022,4/15/2024,AMD-79012,Global Pharma Supplies,25,48,7.2,0.7,99.1,Dr. Mike Johnson,Accepted
-Warfarin,5/20/2023,5/20/2025,WRN-80123,HealthLink Pharmaceuticals,23,50,6.5,0.9,99,,
-Loratadine,6/10/2023,6/10/2026,LRT-09123,Lifeline Pharmaceuticals,22,45,6.8,0.7,98.9,Sarah White,Accepted
-Levocetirizine,4/10/2022,4/10/2024,LVC-01234,HealthLink Pharmaceuticals,24,47,7,1.1,99.3,Dr. Emily Clark,Accepted
-Clindamycin,3/20/2023,3/20/2026,CLD-12345,MedSupply Solutions,26,50,6.5,0.9,98.5,John Smith,Rejected
-Dexamethasone,8/15/2021,8/15/2023,DXT-23456,PharmaOne Corp,23,46,7.1,1.3,99.1,Dr. Mike Johnson,Accepted
-Sulfasalazine,5/10/2022,5/10/2025,SLF-34567,HealthCare Pharma Ltd,25,49,7.4,0.8,98.8,Sarah Johnson,Accepted
-Propranolol,7/25/2023,7/25/2026,PRP-45678,MedPharma Industries,24,50,6.6,1.2,98.7,John Doe,Accepted
-Hydroxychloroquine,8/20/2022,8/20/2025,HCQ-56789,Global Pharma Supplies,26,48,6.3,0.7,99.2,Dr. Jane Doe,Accepted
-Mefenamic Acid,9/5/2021,9/5/2024,MFA-67890,Lifeline Pharmaceuticals,23,47,7.2,0.6,98.9,Sarah White,Accepted
-Quetiapine,10/1/2023,10/1/2026,QTP-78901,HealthLink Pharmaceuticals,22,49,6.8,1,99.1,Dr. Sam Brown,Accepted
-Fluvoxamine,11/12/2022,11/12/2024,FLX-89012,MedSupply Solutions,24,48,7.3,0.9,98.8,Michael Lee,Accepted
-Imipramine,12/15/2023,12/15/2026,IMP-90123,Global Pharma Supplies,25,46,6.7,1.1,98.7,Dr. Emily Clark,Accepted
-Sertraline,1/20/2021,1/20/2024,SRT-01234,HealthCare Pharma Ltd,26,47,6.9,0.6,98.9,Sarah Johnson,Accepted
-Acetazolamide,2/15/2023,2/15/2026,ACT-12345,PharmaOne Corp,22,49,7,0.8,99.2,John Doe,Accepted
-Enalapril,3/20/2022,3/20/2025,ENL-23456,Lifeline Pharmaceuticals,23,48,6.4,1.2,98.6,Dr. Mike Johnson,Rejected
-Fentanyl,4/5/2022,4/5/2024,FTL-34567,HealthLink Pharmaceuticals,24,50,7.5,0.7,99.4,John Smith,Accepted
-Methotrexate,5/20/2021,5/20/2024,MTX-45678,MedSupply Solutions,25,47,6.6,0.5,98.3,Sarah White,Accepted
-Ketorolac,6/15/2022,6/15/2025,KTR-56789,Global Pharma Supplies,23,51,6.9,1.4,99,Dr. Sam Brown,Rejected
-Tramadol,7/12/2023,7/12/2026,TRD-67890,PharmaOne Corp,24,50,7.3,1.1,98.7,Michael Lee,Accepted
-Montelukast,8/1/2022,8/1/2025,MNT-78901,HealthCare Pharma Ltd,26,45,6.5,0.9,99.1,Dr. Jane Doe,Accepted
-Oxybutynin,9/25/2021,9/25/2024,OXY-89012,Lifeline Pharmaceuticals,22,46,7.2,1.3,99.3,Sarah Johnson,Accepted
-Verapamil,10/11/2022,10/11/2024,VRP-90123,Global Pharma Supplies,24,50,6.8,1,98.6,John Doe,Accepted
-Diltiazem,11/5/2023,11/5/2026,DLT-01234,MedSupply Solutions,25,49,7,0.7,99.4,Dr. Sam Brown,Accepted
-Carvedilol,12/20/2023,12/20/2026,CRV-12345,HealthLink Pharmaceuticals,23,46,6.7,0.8,99.1,John Smith,Accepted
-Clonidine,1/15/2022,1/15/2024,CLD-23456,Lifeline Pharmaceuticals,26,48,6.4,1.2,98.7,Dr. Mike Johnson,Rejected
-Gabapentin,2/28/2023,2/28/2026,GBP-34567,Global Pharma Supplies,22,45,7.2,0.6,98.8,Sarah White,Accepted
-Pregabalin,3/22/2022,3/22/2025,PRG-45678,HealthCare Pharma Ltd,23,50,6.8,0.9,98.5,John Doe,Accepted
-Olanzapine,4/18/2021,4/18/2024,OLN-56789,MedSupply Solutions,25,49,7.3,1,99,Dr. Jane Doe,Accepted
-Risperidone,5/11/2022,5/11/2024,RSP-67890,Global Pharma Supplies,26,47,6.5,1.1,98.9,Michael Lee,Accepted
-Amlodipine,6/9/2023,6/9/2026,AML-78901,HealthLink Pharmaceuticals,24,48,7.1,0.8,99.1,John Smith,Accepted
-Hydrochlorothiazide,7/19/2022,7/19/2025,HCT-89012,Lifeline Pharmaceuticals,22,46,7,0.6,99.2,Dr. Mike Johnson,Accepted
-Azithromycin,3/15/2021,3/15/2023,AZT-01234,HealthLink Pharmaceuticals,23,47,7.1,0.5,98.7,Sarah White,Accepted
-Metformin,2/20/2022,2/20/2025,MTF-56789,Lifeline Pharmaceuticals,24,46,6.4,1.3,99.3,Dr. Emily Clark,Accepted
-Fluconazole,3/25/2023,3/25/2026,FLZ-34567,PharmaOne Corp,22,48,6.7,0.8,99,John Smith,Accepted
-Doxycycline,5/12/2022,5/12/2025,DOX-67890,Global Pharma Supplies,26,50,6.5,1,99.4,Dr. Mike Johnson,Accepted
-Ciprofloxacin,7/18/2021,7/18/2023,CPF-90123,MedSupply Solutions,25,49,6.8,0.7,98.9,Sarah Johnson,Accepted
-Levofloxacin,8/1/2023,8/1/2026,LVF-23456,HealthCare Pharma Ltd,24,48,7.2,0.6,98.5,John Doe,Accepted
-Atorvastatin,9/5/2022,9/5/2025,ATR-45678,Lifeline Pharmaceuticals,22,46,6.6,1.1,99.2,Dr. Sam Brown,Accepted
-Pravastatin,10/10/2021,10/10/2024,PRV-56789,Global Pharma Supplies,25,49,7,0.9,98.7,Michael Lee,Accepted
-Simvastatin,11/12/2023,11/12/2026,SMV-67890,HealthLink Pharmaceuticals,23,50,6.9,0.7,98.8,Dr. Emily Clark,Accepted
-Rivaroxaban,1/5/2022,1/5/2024,RVX-78901,MedSupply Solutions,26,48,6.5,1.2,99,Sarah White,Accepted
-Apixaban,2/22/2021,2/22/2024,APX-89012,Lifeline Pharmaceuticals,24,47,7.1,1,99.3,John Smith,Accepted
-Digoxin,3/15/2023,3/15/2026,DGX-01234,HealthCare Pharma Ltd,22,45,6.8,0.9,98.6,Dr. Jane Doe,Accepted
-Furosemide,4/20/2022,4/20/2025,FRM-12345,Global Pharma Supplies,25,46,7,1.1,98.7,Sarah Johnson,Accepted
-Spironolactone,5/11/2021,5/11/2024,SPR-23456,MedSupply Solutions,24,48,6.7,0.8,99.4,John Doe,Accepted
-Allopurinol,6/8/2023,6/8/2026,ALP-34567,Lifeline Pharmaceuticals,23,50,6.9,0.6,99.1,Dr. Sam Brown,Accepted
-Methimazole,7/25/2022,7/25/2025,MTM-45678,PharmaOne Corp,25,49,7.2,1.3,99,Michael Lee,Accepted
-Amiodarone,8/19/2021,8/19/2024,AMD-56789,HealthLink Pharmaceuticals,22,47,6.6,0.7,98.9,Dr. Emily Clark,Accepted
-Lisinopril,9/12/2022,9/12/2025,LSN-67890,Global Pharma Supplies,23,48,7.1,0.8,99.2,Sarah White,Accepted
-Clopidogrel,10/10/2023,10/10/2026,CLP-78901,MedSupply Solutions,24,50,6.5,0.9,99.4,John Smith,Accepted
-Losartan,1/25/2022,1/25/2025,LST-89012,HealthCare Pharma Ltd,25,49,7,1.2,98.8,Dr. Jane Doe,Accepted
-Isosorbide,2/10/2021,2/10/2024,ISO-01234,PharmaOne Corp,23,48,6.9,0.8,98.5,Sarah Johnson,Accepted
-Amlodipine,3/5/2023,3/5/2026,AML-12345,HealthLink Pharmaceuticals,24,47,7.2,0.6,99,John Doe,Accepted
-Simvastatin,4/10/2022,4/10/2025,SMV-23456,Lifeline Pharmaceuticals,26,50,6.7,0.7,98.9,Dr. Mike Johnson,Accepted
-Warfarin,5/12/2023,5/12/2026,WRN-34567,Global Pharma Supplies,25,48,6.5,1.1,99.2,Sarah White,Accepted
-Isoniazid,6/25/2021,6/25/2024,ISO-45678,MedSupply Solutions,24,49,6.9,1,98.6,John Smith,Accepted
-Rifampin,7/1/2022,7/1/2025,RIF-56789,HealthLink Pharmaceuticals,23,50,7.1,0.7,99.1,Dr. Emily Clark,Accepted
-Pyrazinamide,8/15/2023,8/15/2026,PYZ-67890,Global Pharma Supplies,25,48,6.4,0.9,98.5,Sarah Johnson,Accepted
-Ethambutol,9/20/2021,9/20/2024,ETM-78901,Lifeline Pharmaceuticals,24,47,7,1.2,99.3,John Doe,Accepted
-Propranolol,10/5/2022,10/5/2025,PRP-89012,PharmaOne Corp,26,49,6.7,0.6,98.8,Dr. Sam Brown,Accepted
-Metoprolol,11/10/2023,11/10/2026,MTP-01234,Global Pharma Supplies,22,46,7.1,0.9,99,Sarah White,Accepted
-Enalapril,7/10/2021,7/10/2024,ENL-45678,HealthLink Pharmaceuticals,23,48,6.7,0.9,98.8,John Smith,Accepted
-Bisoprolol,8/12/2022,8/12/2025,BSP-56789,Lifeline Pharmaceuticals,24,49,7.2,0.8,99,Dr. Emily Clark,Accepted
-Carvedilol,9/15/2023,9/15/2026,CRV-67890,PharmaOne Corp,22,47,6.5,1.2,99.2,Michael Lee,Accepted
-Diltiazem,10/25/2021,10/25/2024,DLT-78901,Global Pharma Supplies,25,50,7.1,0.6,98.9,Sarah White,Accepted
-Verapamil,11/10/2022,11/10/2025,VRP-89012,MedSupply Solutions,23,48,6.9,1,99.4,John Smith,Accepted
-Hydralazine,1/5/2023,1/5/2026,HDR-01234,HealthCare Pharma Ltd,24,49,6.8,0.7,99.1,Dr. Sam Brown,Accepted
-Nitrofurantoin,2/15/2022,2/15/2025,NTF-12345,Lifeline Pharmaceuticals,25,46,7,1.1,98.7,Dr. Jane Doe,Accepted
-Amoxicillin,3/25/2021,3/25/2024,AMX-23456,Global Pharma Supplies,26,50,6.7,0.6,99.3,Michael Lee,Accepted
-Clarithromycin,4/30/2023,4/30/2026,CLR-34567,HealthLink Pharmaceuticals,22,48,7.2,0.9,98.6,Sarah White,Accepted
-Cefuroxime,5/18/2022,5/18/2025,CFX-45678,MedSupply Solutions,24,49,6.9,0.7,98.9,John Smith,Accepted
-Erythromycin,6/23/2023,6/23/2026,ERY-56789,PharmaOne Corp,23,46,6.5,1.3,99,Dr. Emily Clark,Accepted
-Sulfamethoxazole,7/9/2021,7/9/2024,SFX-67890,HealthCare Pharma Ltd,25,50,6.8,0.8,99.2,Sarah White,Accepted
-Trimethoprim,8/12/2022,8/12/2025,TRM-78901,Global Pharma Supplies,24,47,7,0.9,99.4,Dr. Sam Brown,Accepted
-Vancomycin,9/21/2021,9/21/2024,VAN-89012,MedSupply Solutions,26,48,6.7,1.2,98.8,John Doe,Accepted
-Moxifloxacin,10/29/2022,10/29/2025,MXF-01234,Lifeline Pharmaceuticals,23,50,6.9,0.7,99.1,Michael Lee,Accepted
-Levofloxacin,11/15/2023,11/15/2026,LVF-12345,HealthLink Pharmaceuticals,24,49,7.1,0.6,98.9,Sarah White,Accepted
-Gatifloxacin,12/12/2021,12/12/2024,GTF-23456,Global Pharma Supplies,25,47,6.5,1,99.2,John Smith,Accepted
-Daptomycin,1/8/2022,1/8/2025,DPT-34567,MedSupply Solutions,23,48,7.2,0.8,99,Dr. Emily Clark,Accepted
-Colistin,2/23/2023,2/23/2026,CLS-45678,Lifeline Pharmaceuticals,24,49,6.9,0.9,98.7,Michael Lee,Accepted
-Polymyxin B,3/12/2021,3/12/2024,PMB-56789,PharmaOne Corp,25,50,6.7,1.1,99.1,John Doe,Accepted
-Imipenem,4/30/2022,4/30/2025,IMP-67890,Global Pharma Supplies,23,46,7.1,0.8,99.4,Dr. Sam Brown,Accepted
-Meropenem,5/18/2023,5/18/2026,MRP-78901,HealthCare Pharma Ltd,24,49,6.9,0.6,98.9,Sarah White,Accepted
-Tetracycline,6/11/2021,6/11/2024,TTC-89012,MedSupply Solutions,26,48,6.5,1.2,99.2,John Smith,Accepted
-Demeclocycline,7/19/2022,7/19/2025,DMC-01234,PharmaOne Corp,23,47,6.8,0.9,98.7,Michael Lee,Accepted
-Minocycline,8/15/2023,8/15/2026,MNC-12345,Lifeline Pharmaceuticals,24,50,7,0.7,98.6,Sarah White,Accepted
-Tigecycline,9/25/2021,9/25/2024,TGC-23456,Global Pharma Supplies,25,46,7.1,1,99,John Doe,Accepted
-Cefepime,10/30/2022,10/30/2025,CFP-34567,HealthLink Pharmaceuticals,23,48,6.7,0.8,99.2,Dr. Emily Clark,Accepted
-Cephalexin,11/22/2023,11/22/2026,CPX-45678,MedSupply Solutions,24,49,6.9,0.7,98.8,Michael Lee,Accepted
+Paracetamol,01/15/2025,01/15/2027,PCT-12345,HealthCare Pharma Ltd,25,45,6.5,1.2,99.5,John Smith,Accepted
+Ibuprofen,02-10-2025,02-10-2026,IBP-23456,MedSupply Solutions,23,50,7,0.8,98.7,Sarah Johnson,Accepted
+Amoxicillin,03-12-2025,03-12-2027,AMX-34567,MedPharma Industries,24,52,6.8,2,97.8,Dr. Emily Clark,Rejected
+Tylenol,11-04-2025,11-04-2026,TYL-46048,Novartis,21.8,43,7.2,2.2,97.7,Dr. Emily Clark,Accepted
+Advil,02-07-2025,02-07-2026,ADV-76237,Roche,20.2,46,7.3,1.8,98.5,Dr. Emily Clark,Accepted
+Aleve,01/25/2025,01/25/2026,ALE-65392,AstraZeneca,22.2,46,7.7,0.9,97.7,John Smith,Accepted
+Bayer Aspirin,06/20/2025,06/20/2027,BAY-15695,BMS,24.3,52,6.1,0.8,99,Mike Lee,Accepted
+Excedrin,12-03-2025,12-03-2026,EXC-96673,Novartis,26.2,42,7.5,2.2,98.4,Dr. Emily Clark,Accepted
+Motrin,06-06-2025,06-06-2027,MOT-56566,Novartis,25.4,60,6.1,1.6,98.8,Dr. Sarah Johnson,Accepted
+Bufferin,07-09-2025,07-09-2026,BUF-99733,AstraZeneca,26.7,41,6.4,0.2,98.3,Mike Lee,Accepted
+Anacin,10/23/2025,10/23/2027,ANA-37869,BMS,23.2,60,6.8,0.7,98.1,Mike Lee,Accepted
+BC Powder,07/19/2025,07/19/2027,BC -57447,Novartis,28,44,6.9,0.3,97.6,John Smith,Accepted
+Goody's,03/26/2025,03/26/2027,GOO-88172,GSK,23.1,59,7.8,1.4,99.8,John Smith,Accepted
+Midol,02/22/2025,02/22/2027,MID-94012,AstraZeneca,20.9,53,6.3,0.1,99.2,Mike Lee,Rejected
+Pamprin,03/17/2025,03/17/2026,PAM-91959,Sanofi,26.7,56,7.1,0.5,99.3,John Smith,Accepted
+Theraflu,08-01-2025,08-01-2026,THE-57576,Sanofi,21.9,47,7.6,2.4,97.7,Dr. Emily Clark,Accepted
+Contac,09/25/2025,09/25/2026,CON-26828,BMS,27.6,45,6.5,2.2,98.5,Dr. Sarah Johnson,Rejected
+Coricidin,12/23/2025,12/23/2026,COR-50857,J&J,28,60,6.7,2.3,98.6,Dr. Sarah Johnson,Accepted
+Dristan,06-01-2025,06-01-2026,DRI-87128,Novartis,20.1,60,6.1,0.3,97.6,Mike Lee,Accepted
+Sudafed PE,04-09-2025,04-09-2027,SUD-38080,AbbVie,21.1,58,7,0.7,98.6,Dr. Emily Clark,Accepted
+Claritin D,02/22/2025,02/22/2027,CLA-56438,J&J,23.3,41,7.2,2.5,97.7,Dr. Emily Clark,Accepted
+Zyrtec D,02-08-2025,02-08-2026,ZYR-34931,AbbVie,23.6,53,6.3,1.2,99.6,John Smith,Accepted
+Allegra D,09-04-2025,09-04-2026,ALL-95477,AbbVie,26.7,42,7.7,2.1,97.9,Dr. Emily Clark,Accepted
+Amoxil,07-02-2025,07-02-2026,AMO-59672,Pfizer,27.9,48,7.7,2,98.2,Dr. Emily Clark,Accepted
+Augmentin,05-07-2025,05-07-2026,AUG-85914,AbbVie,20.5,50,6.1,1.5,98.7,Dr. Sarah Johnson,Accepted
+Cipro,09-03-2025,09-03-2026,CIP-18981,Roche,20.5,47,6.7,2.4,98.9,John Smith,Accepted
+Keflex,07/22/2025,07/22/2027,KEF-44179,Novartis,25.4,50,6.4,1,99.1,Mike Lee,Accepted
+Zithromax,02-01-2025,02-01-2027,ZIT-91416,Roche,28,42,7,1.3,97.8,Mike Lee,Accepted
+Levaquin,04-12-2025,04-12-2027,LEV-30676,BMS,26.7,49,7.1,2.5,99.1,John Smith,Accepted
+Bactrim DS,09-10-2025,09-10-2026,BAC-27601,Sanofi,20.9,43,7.3,0.5,98.2,Dr. Sarah Johnson,Accepted
+Flagyl,04/22/2025,04/22/2027,FLA-76244,BMS,22,41,6.2,1.1,98.2,John Smith,Accepted
+Cleocin,03/21/2025,03/21/2027,CLE-31178,BMS,24.4,53,7,0.4,99.8,Dr. Sarah Johnson,Accepted
+Vancocin,06/19/2025,06/19/2026,VAN-66333,Merck,20.3,51,7.6,2,99.6,Mike Lee,Accepted
+Avelox,04/22/2025,04/22/2026,AVE-56357,AbbVie,27.1,53,7.8,1.9,99.7,Dr. Sarah Johnson,Accepted
+Floxin,03/14/2025,03/14/2026,FLO-33509,AstraZeneca,26.3,53,7.4,2.2,99.4,Mike Lee,Accepted
+Omnicef,12-04-2025,12-04-2027,OMN-15075,BMS,21.8,54,6.6,2.1,99.6,Dr. Sarah Johnson,Accepted
+Vibativ,04/13/2025,04/13/2027,VIB-46517,GSK,27.7,48,6.6,1.3,99.1,Mike Lee,Rejected
+Cubicin,02-09-2025,02-09-2026,CUB-86099,Sanofi,20.3,59,6.8,1.8,98.3,John Smith,Accepted
+Zyvox,10-07-2025,10-07-2027,ZYV-15817,J&J,20,57,7.2,2.4,99.3,Dr. Sarah Johnson,Accepted
+Prozac,02/22/2025,02/22/2027,PRO-91678,AstraZeneca,25.3,43,7.3,0.8,98.2,Dr. Emily Clark,Accepted
+Zoloft,12-10-2025,12-10-2026,ZOL-35144,J&J,25.3,52,7.2,2.3,99,Mike Lee,Accepted
+Lexapro,01-10-2025,01-10-2027,LEX-37549,J&J,26.3,59,7.2,1.2,98.6,Dr. Sarah Johnson,Accepted
+Paxil CR,12-06-2025,12-06-2026,PAX-47196,AbbVie,25.3,59,6.6,2.1,99.3,Mike Lee,Accepted
+Celexa,04-05-2025,04-05-2026,CEL-16057,Novartis,27.9,59,7.5,0.3,98.5,Dr. Sarah Johnson,Accepted
+Wellbutrin XL,07/16/2025,07/16/2027,WEL-41979,Merck,25.2,40,7.6,2.2,99.6,Dr. Emily Clark,Accepted
+Effexor XR,12/17/2025,12/17/2027,EFF-16582,AbbVie,22,43,6.8,2,99.1,Mike Lee,Rejected
+Pristiq,08/20/2025,08/20/2027,PRI-81810,BMS,27.2,55,6.8,1.9,99.5,Mike Lee,Accepted
+Cymbalta,09/16/2025,09/16/2026,CYM-45992,BMS,20.6,49,6.4,0.9,99.6,John Smith,Accepted
+Savella,04/13/2025,04/13/2026,SAV-38043,GSK,23.3,50,7,1.1,98,Dr. Emily Clark,Accepted
+Remeron,10/23/2025,10/23/2026,REM-85456,J&J,23.8,51,6.5,1,99.6,Dr. Emily Clark,Accepted
+Elavil,12/18/2025,12/18/2026,ELA-73993,Novartis,22.2,55,6.1,0.9,99.1,Dr. Emily Clark,Accepted
+Pamelor,08-05-2025,08-05-2026,PAM-61645,Roche,24.5,40,6.2,1.1,99.6,Dr. Sarah Johnson,Accepted
+Norvasc,07-11-2025,07-11-2026,NOR-69598,AstraZeneca,22.7,52,6.5,2.4,98.5,John Smith,Accepted
+Cozaar,12/18/2025,12/18/2026,COZ-55870,Novartis,25.2,60,6.1,0.2,98.1,John Smith,Accepted
+Diovan,04-05-2025,04-05-2027,DIO-97747,GSK,24.5,46,6.8,0.7,98.4,John Smith,Accepted
+Avapro,03-10-2025,03-10-2026,AVA-85849,Pfizer,27.4,58,7.2,2.4,98.5,Dr. Sarah Johnson,Accepted
+Benicar,12/27/2025,12/27/2026,BEN-23356,Sanofi,26.8,59,7.4,2,98.9,John Smith,Accepted
+Lopressor,07/22/2025,07/22/2027,LOP-19038,AbbVie,25.2,40,7.5,2.1,97.8,Mike Lee,Accepted
+Coreg CR,08/23/2025,08/23/2026,COR-67080,Merck,25.9,60,6.5,2,98.8,Dr. Emily Clark,Accepted
+Tenormin,12/19/2025,12/19/2027,TEN-52245,Novartis,26.6,42,6.5,1.2,99.3,Dr. Emily Clark,Accepted
+Inderal LA,08/28/2025,08/28/2027,IND-33834,BMS,21.7,48,6.6,2.2,99.2,Mike Lee,Accepted
+Lipitor,09-07-2025,09-07-2026,LIP-41635,J&J,23.9,47,7.2,1.7,98.7,John Smith,Accepted
+Crestor,04/13/2025,04/13/2026,CRE-50135,Roche,23,57,7,1.1,99.3,Mike Lee,Accepted
+Zocor,08-09-2025,08-09-2027,ZOC-42951,Novartis,21,46,6.6,1.9,99.8,Dr. Sarah Johnson,Accepted
+Pravachol,12/16/2025,12/16/2027,PRA-87278,AbbVie,24.8,43,7.5,0.8,98.4,Mike Lee,Accepted
+Lescol XL,09-05-2025,09-05-2027,LES-15965,Pfizer,24.4,44,7.1,1.9,97.7,John Smith,Accepted
+Mevacor,08/16/2025,08/16/2027,MEV-54657,Merck,27.7,48,7.7,1.2,99.5,Dr. Emily Clark,Accepted
+Zetia,10/21/2025,10/21/2026,ZET-29887,Merck,26.5,49,6.2,0.7,98.8,Dr. Emily Clark,Accepted
+Niaspan,10-08-2025,10-08-2027,NIA-69049,BMS,22.4,58,7.8,0.8,99,John Smith,Rejected
+Vytorin,04/21/2025,04/21/2026,VYT-44687,GSK,21.3,45,7,0.5,98.5,Dr. Emily Clark,Accepted
+Welchol,04-10-2025,04-10-2027,WEL-69510,GSK,25.5,48,7.4,1.6,99.1,Dr. Sarah Johnson,Accepted
+Glucophage XR,09-08-2025,09-08-2026,GLU-44816,Merck,20.6,45,7.4,1.5,99.5,Mike Lee,Accepted
+Glucotrol XL,08/23/2025,08/23/2027,GLU-62757,Sanofi,24,55,6.8,1.5,99.6,Mike Lee,Accepted
+Amaryl,01-03-2025,01-03-2026,AMA-98381,Roche,24.7,40,7.8,1.7,98.1,John Smith,Accepted
+Actos,03/16/2025,03/16/2027,ACT-46458,Merck,28,53,7.1,1.3,97.7,Mike Lee,Accepted
+Avandia,06/22/2025,06/22/2026,AVA-31079,AstraZeneca,23.3,55,6.5,2.4,99.5,John Smith,Accepted
+Januvia,06-09-2025,06-09-2027,JAN-25194,J&J,26.9,40,7.2,1.4,98.5,Dr. Sarah Johnson,Accepted
+Onglyza,10/25/2025,10/25/2027,ONG-91973,BMS,26.1,46,6.5,0.4,98.2,Dr. Emily Clark,Accepted
+Jardiance,11/20/2025,11/20/2026,JAR-30758,Sanofi,24.4,57,6.7,0.6,99.5,John Smith,Accepted
+Invokana,02/21/2025,02/21/2026,INV-75323,Sanofi,24.1,48,6.7,1.3,98.6,Dr. Emily Clark,Accepted
+Prilosec OTC,07-07-2025,07-07-2026,PRI-19150,Sanofi,26.2,53,6.6,2,98.1,John Smith,Accepted
+Nexium 24HR,05/27/2025,05/27/2027,NEX-29476,BMS,24.3,51,6.6,1.9,98.4,Mike Lee,Accepted
+Prevacid 24HR,12-08-2025,12-08-2027,PRE-40613,J&J,20.3,55,7.3,2,98.4,Dr. Sarah Johnson,Accepted
+Aciphex,01-05-2025,01-05-2027,ACI-23154,BMS,20.8,54,6,0.4,99.6,Dr. Sarah Johnson,Accepted
+Protonix,05-11-2025,05-11-2027,PRO-95175,GSK,26.8,57,6.7,0.9,99.2,Dr. Emily Clark,Accepted
+Zegerid,01/20/2025,01/20/2026,ZEG-40771,Sanofi,28,42,6.8,0.3,99,John Smith,Accepted
+Pepcid AC,12-10-2025,12-10-2026,PEP-16028,AstraZeneca,26.4,49,6.6,1.1,98.1,Dr. Emily Clark,Accepted
+Tagamet HB,03-06-2025,03-06-2026,TAG-20350,Roche,27,59,7.2,1.3,98.9,Dr. Sarah Johnson,Accepted
+Synthroid,05/15/2025,05/15/2027,SYN-97404,Pfizer,27.2,54,7.6,1.7,97.9,Dr. Emily Clark,Rejected
+Levoxyl,10-10-2025,10-10-2027,LEV-42780,BMS,26.8,46,7.8,2.1,97.8,Dr. Emily Clark,Accepted
+Levothroid,10-10-2025,10-10-2027,LEV-12875,J&J,22.2,58,7.6,2,99.8,Dr. Emily Clark,Accepted
+Unithroid,05/25/2025,05/25/2026,UNI-89569,AstraZeneca,21.8,46,7.1,1.7,99.2,Dr. Sarah Johnson,Accepted
+Cytomel,11/21/2025,11/21/2026,CYT-50492,BMS,20.3,51,7.3,0.3,98.2,Dr. Emily Clark,Accepted
+Nature-Throid,03/26/2025,03/26/2027,NAT-79579,AbbVie,27.3,45,6.5,2.1,98.7,Mike Lee,Accepted
+WP Thyroid,06/26/2025,06/26/2026,WP -71385,GSK,21.1,47,7.5,1.8,99.9,Mike Lee,Accepted
+Armour Thyroid,07-01-2025,07-01-2027,ARM-80329,GSK,23.6,48,7.1,2.1,99.8,John Smith,Accepted
+Advair Diskus,08-01-2025,08-01-2027,ADV-89964,Novartis,25.2,60,7.5,2.3,98.2,Dr. Emily Clark,Accepted
+Symbicort,01-02-2025,01-02-2027,SYM-74569,GSK,20.8,57,6.2,1.2,99.1,Dr. Emily Clark,Accepted
+Dulera,12-05-2025,12-05-2027,DUL-95841,GSK,26.7,59,6.7,2.4,97.6,Mike Lee,Accepted
+Breo Ellipta,08-08-2025,08-08-2027,BRE-23022,AstraZeneca,24.4,60,6.6,1.1,98,John Smith,Rejected
+Spiriva HandiHaler,08-03-2025,08-03-2026,SPI-94109,Roche,27.8,41,7.4,0.7,97.8,Dr. Sarah Johnson,Accepted
+Tudorza Pressair,09-07-2025,09-07-2026,TUD-40539,AstraZeneca,26.2,59,6,2.2,97.8,Dr. Sarah Johnson,Accepted
+ProAir HFA,03-04-2025,03-04-2026,PRO-27275,Pfizer,22.9,47,7.1,0.1,98.1,Dr. Sarah Johnson,Accepted
+Ventolin HFA,09-04-2025,09-04-2026,VEN-72422,BMS,26.2,56,7.1,1.2,98,John Smith,Accepted
+Xopenex HFA,11/17/2025,11/17/2027,XOP-70036,Pfizer,20.5,55,7.5,1.1,97.8,Dr. Emily Clark,Accepted
+Atrovent HFA,02-11-2025,02-11-2026,ATR-18609,Merck,22.2,60,7.1,1.8,98.4,Mike Lee,Accepted
+Combivent Respimat,10/14/2025,10/14/2026,COM-24996,AbbVie,25.8,46,6.8,2.2,98.5,Dr. Emily Clark,Accepted
+Coumadin,12-04-2025,12-04-2027,COU-65936,AstraZeneca,25.3,51,7.7,1.7,98.6,John Smith,Accepted
+Xarelto,02/14/2025,02/14/2026,XAR-58843,Merck,24.5,58,7.7,1.4,99.1,Dr. Emily Clark,Accepted
+Eliquis,11/25/2025,11/25/2027,ELI-16743,Sanofi,24.8,51,6.2,1.3,97.9,Dr. Emily Clark,Accepted
+Pradaxa,02-12-2025,02-12-2027,PRA-25058,Sanofi,24.6,53,7.5,2.4,99.5,John Smith,Accepted
+Lovenox,11/27/2025,11/27/2027,LOV-13794,Merck,22.2,49,7.7,0.9,97.9,Dr. Sarah Johnson,Accepted
+Plavix,07-03-2025,07-03-2026,PLA-92991,Pfizer,20.7,56,6.4,1.1,98.3,Mike Lee,Accepted
+Brilinta,06/25/2025,06/25/2026,BRI-16895,Merck,21.3,59,6.1,0.3,98.6,Dr. Emily Clark,Accepted
+Effient,08/14/2025,08/14/2027,EFF-38255,AbbVie,20.9,53,6.2,1.7,98.9,Mike Lee,Accepted
+Prednisone,07/20/2025,07/20/2026,PRE-11007,Novartis,22.4,46,7.4,1.9,98.2,John Smith,Accepted
+Medrol Dose Pack,12/14/2025,12/14/2026,MED-26932,J&J,24.3,47,6.9,2.1,99.4,John Smith,Accepted
+Decadron,12-02-2025,12-02-2027,DEC-12456,BMS,27.4,50,7,1.5,99.2,Dr. Emily Clark,Accepted
+Cortef,07-01-2025,07-01-2027,COR-32527,Roche,23.7,51,6.2,2.1,98.1,Dr. Emily Clark,Accepted
+Claritin,07/28/2025,07/28/2027,CLA-54500,Novartis,22.7,45,6.1,1.6,98.8,Dr. Sarah Johnson,Rejected
+Zyrtec,06-12-2025,06-12-2026,ZYR-40968,GSK,21.2,46,6.3,0.5,99.3,John Smith,Accepted
+Allegra,11/16/2025,11/16/2027,ALL-83889,Roche,23.6,58,7.2,2.5,98.3,Mike Lee,Accepted
+Xyzal,02/16/2025,02/16/2027,XYZ-92756,Sanofi,26.4,58,6.1,1.3,98.2,Dr. Emily Clark,Accepted
+Clarinex,06/27/2025,06/27/2027,CLA-20057,GSK,24.9,56,6.7,1.5,99.8,John Smith,Accepted
+Astelin,10/21/2025,10/21/2026,AST-52143,Roche,23.8,44,7.7,1.2,99.4,Mike Lee,Rejected
+Nasacort AQ,02/17/2025,02/17/2026,NAS-15130,Novartis,25.7,54,6.9,1.6,98.4,Mike Lee,Accepted
+Flonase,06/22/2025,06/22/2026,FLO-92691,AstraZeneca,20.5,43,7,1,98.1,Dr. Sarah Johnson,Accepted
+Nasonex,10/22/2025,10/22/2026,NAS-55851,Sanofi,27.7,52,6.2,1.8,97.7,Dr. Emily Clark,Accepted
+Xanax XR,06/27/2025,06/27/2026,XAN-97833,AbbVie,20.7,53,6.9,0.1,98.2,Dr. Sarah Johnson,Accepted
+Ativan,08-07-2025,08-07-2026,ATI-28030,Merck,20.6,43,6.9,1.4,99.3,John Smith,Accepted
+Klonopin,10-05-2025,10-05-2027,KLO-30218,Merck,21.4,59,7.5,0.5,98.6,Dr. Emily Clark,Accepted
+Valium,12-08-2025,12-08-2027,VAL-90031,Sanofi,26,54,6.4,0.7,99.8,Dr. Emily Clark,Rejected
+Restoril,04-12-2025,04-12-2027,RES-70513,Sanofi,26.2,56,6.9,2.4,99.5,Dr. Sarah Johnson,Accepted
+Ambien CR,01/21/2025,01/21/2027,AMB-58655,AbbVie,27.5,56,7.5,0.8,99.3,Mike Lee,Accepted
+Lunesta,09-05-2025,09-05-2027,LUN-22021,Novartis,26.5,51,7.7,1.1,98.5,Mike Lee,Accepted
+Sonata,02-12-2025,02-12-2026,SON-13694,AstraZeneca,27.4,60,6.6,0.5,97.6,Dr. Emily Clark,Accepted
+Viagra,03/25/2025,03/25/2027,VIA-68799,Roche,20,42,6,0.6,97.9,Dr. Emily Clark,Accepted
+Cialis Daily,05-08-2025,05-08-2027,CIA-25970,Pfizer,21.9,60,7.4,1.2,97.8,Dr. Emily Clark,Accepted
+Levitra,01/21/2025,01/21/2026,LEV-28818,Sanofi,23.4,59,6.6,1.5,97.9,John Smith,Accepted
+Celebrex,06-03-2025,06-03-2026,CEL-61177,BMS,20.3,52,7.8,0.7,97.5,John Smith,Accepted
+Mobic,12/22/2025,12/22/2026,MOB-86271,AstraZeneca,21.1,51,7,2.1,97.9,Dr. Emily Clark,Rejected
+Daypro,08/21/2025,08/21/2026,DAY-27675,GSK,25.7,54,6.1,0.6,99.4,John Smith,Accepted
+Voltaren Gel,05/17/2025,05/17/2027,VOL-81176,BMS,22,60,6.3,1,99.4,Mike Lee,Accepted
+Imitrex,06/14/2025,06/14/2027,IMI-67637,J&J,22.7,45,6.9,1.3,99.7,Mike Lee,Accepted
+Maxalt MLT,12/14/2025,12/14/2026,MAX-66440,Roche,28,45,7,0.9,97.7,Mike Lee,Accepted
+Frova,10/23/2025,10/23/2027,FRO-31842,BMS,22.8,41,7.3,2.3,99,Dr. Emily Clark,Accepted
+Zomig ZMT,01-03-2025,01-03-2027,ZOM-57619,AbbVie,26.4,45,7.7,0.4,99,Dr. Emily Clark,Accepted
+Fioricet,02-08-2025,02-08-2027,FIO-57467,J&J,27.6,41,7.1,1.7,99.8,Mike Lee,Accepted
+Tegretol XR,02/19/2025,02/19/2026,TEG-79397,AstraZeneca,23.2,60,6.5,2.4,97.6,Dr. Sarah Johnson,Accepted
+Dilantin,07/18/2025,07/18/2026,DIL-44311,Sanofi,25.6,46,7.8,0.8,99.7,Dr. Emily Clark,Accepted
+Keppra XR,03/28/2025,03/28/2026,KEP-69250,Merck,27.2,54,7.8,2,99.8,Mike Lee,Accepted
+Topamax,12-03-2025,12-03-2027,TOP-49315,Merck,25.7,60,6.3,1,98,Dr. Sarah Johnson,Accepted
+Neurontin,04/26/2025,04/26/2027,NEU-13445,AstraZeneca,24.4,51,6.8,2.5,97.8,John Smith,Accepted
+Lamictal XR,07/23/2025,07/23/2027,LAM-78903,J&J,26.2,58,6.1,2.4,99,Dr. Emily Clark,Accepted
+Trileptal,09-12-2025,09-12-2026,TRI-82260,Roche,21.5,44,6.8,2.3,97.6,John Smith,Accepted
+Lyrica,05-06-2025,05-06-2026,LYR-52291,Novartis,22.8,56,7.6,2.1,98.1,Mike Lee,Accepted
+Aricept,05/20/2025,05/20/2026,ARI-75873,Merck,24.7,58,6.3,1.7,99.2,Mike Lee,Accepted
+Namenda XR,10-02-2025,10-02-2026,NAM-20646,Pfizer,27.6,58,6.5,0.6,98.9,John Smith,Accepted
+Exelon Patch,11/18/2025,11/18/2027,EXE-94136,Sanofi,23.9,52,6.5,0.3,97.6,Dr. Emily Clark,Accepted
+Sinemet CR,08-07-2025,08-07-2027,SIN-89516,Merck,22.5,50,7.3,2.2,99.8,Dr. Sarah Johnson,Accepted
+Requip XL,09/18/2025,09/18/2026,REQ-51827,Novartis,23.7,48,6.8,0.4,97.6,Dr. Emily Clark,Accepted
+Mirapex ER,07-08-2025,07-08-2026,MIR-52917,Roche,25.8,46,7.4,1.3,98.7,Dr. Emily Clark,Accepted
+Colchicine,08-01-2025,08-01-2026,COL-61543,AbbVie,23.7,47,6.4,0.9,97.6,Dr. Emily Clark,Accepted
+Uloric,11/22/2025,11/22/2027,ULO-47453,AbbVie,20.1,43,6.8,2.2,99.2,Dr. Emily Clark,Accepted
+Xenical,07-02-2025,07-02-2026,XEN-57516,AbbVie,22.3,52,6.9,1.9,98.2,John Smith,Accepted
+Alli,02/13/2025,02/13/2027,ALL-54444,AbbVie,27.5,44,6.4,1.3,98.7,John Smith,Accepted
+Qsymia,12-11-2025,12-11-2027,QSY-78069,BMS,21.2,56,6.3,2.3,98.3,Dr. Emily Clark,Rejected
+Atripla,12/27/2025,12/27/2027,ATR-87820,AstraZeneca,24.1,56,7,1.8,98.2,John Smith,Accepted
+Complera,11-04-2025,11-04-2027,COM-86507,Sanofi,26.4,60,6,1.2,99.8,Dr. Sarah Johnson,Accepted
+Genvoya,10/16/2025,10/16/2026,GEN-78712,Roche,26.2,52,6.3,1.7,97.6,John Smith,Accepted
+Biktarvy,08-11-2025,08-11-2027,BIK-29848,J&J,25.5,53,6.9,1.6,98.6,John Smith,Accepted
+Harvoni,09-07-2025,09-07-2027,HAR-96799,BMS,24.2,50,7.7,1.2,98.8,Mike Lee,Accepted
+Sovaldi,12/22/2025,12/22/2027,SOV-89963,BMS,21.5,47,6.5,0.8,99.8,Mike Lee,Accepted
+Epclusa,12-07-2025,12-07-2027,EPC-51555,BMS,22.8,48,6.5,1.5,98.8,Dr. Emily Clark,Accepted
+Fosamax,03-10-2025,03-10-2026,FOS-47700,GSK,22.8,54,7.2,1.9,98,Mike Lee,Rejected
+Actonel,12-09-2025,12-09-2026,ACT-24316,Roche,25.9,47,6.4,1.7,98.8,Dr. Sarah Johnson,Accepted
+Boniva,07-11-2025,07-11-2027,BON-23178,Merck,20,57,7.8,0.5,99.1,Dr. Emily Clark,Accepted
+Reclast,04/25/2025,04/25/2027,REC-52096,Sanofi,25.2,42,7.2,0.7,99.3,John Smith,Rejected
+Prolia,03/14/2025,03/14/2026,PRO-14763,J&J,26.3,45,7.7,2.4,99.7,John Smith,Accepted
+Xalatan,10/20/2025,10/20/2026,XAL-53914,Sanofi,23.6,60,7,1.3,99.8,Dr. Emily Clark,Accepted
+Lumigan,02-11-2025,02-11-2026,LUM-70150,Sanofi,25.7,40,7.3,2,98.9,Dr. Sarah Johnson,Accepted
+Travatan Z,11/13/2025,11/13/2027,TRA-77538,AstraZeneca,20.7,43,6.3,0.4,98.3,Dr. Sarah Johnson,Accepted
+Yaz,07-08-2025,07-08-2027,YAZ-44995,AstraZeneca,22.4,58,6,1.7,99.2,John Smith,Accepted
+Yasmin,08-10-2025,08-10-2026,YAS-63138,AbbVie,27.4,49,7.2,1.6,99.8,Mike Lee,Accepted
+Plan B One-Step,04-05-2025,04-05-2027,PLA-30078,BMS,26,59,6.7,1.8,99.7,Dr. Sarah Johnson,Accepted
+Tylenol PM,11/25/2025,11/25/2026,TYL-78879,BMS,24.2,51,6.1,1.5,97.6,Dr. Sarah Johnson,Accepted
+Advil PM,03-06-2025,03-06-2027,ADV-78202,BMS,20.9,46,7.3,1.3,99.7,Dr. Emily Clark,Accepted
+Aleve PM,08-05-2025,08-05-2027,ALE-69873,Roche,20.5,54,7.2,0.8,97.6,Mike Lee,Accepted
+Benadryl,12-07-2025,12-07-2026,BEN-15936,J&J,22.8,42,7,0.2,99.6,Dr. Emily Clark,Accepted
+Sudafed,07-06-2025,07-06-2026,SUD-94085,J&J,23,52,6.8,2.3,98.4,John Smith,Accepted
+Mucinex DM,11/28/2025,11/28/2026,MUC-95660,AstraZeneca,20.9,57,6.7,0.4,99.8,John Smith,Accepted
+NyQuil,05/15/2025,05/15/2027,NYQ-79721,J&J,26.6,47,6.8,0.5,98,John Smith,Accepted
+DayQuil,11/14/2025,11/14/2026,DAY-41544,Novartis,20.5,59,6.1,1.5,99.2,John Smith,Accepted
+Robitussin DM,01/13/2025,01/13/2027,ROB-40715,AbbVie,21.7,41,6.3,2.5,98.1,Mike Lee,Accepted
+Delsym 12-Hour,11/27/2025,11/27/2027,DEL-41051,Sanofi,27,56,6.4,0.8,97.6,Dr. Sarah Johnson,Accepted
+Tessalon Perles,07/18/2025,07/18/2027,TES-16145,AstraZeneca,27.5,52,7.4,0.9,98.5,Dr. Sarah Johnson,Accepted
+Nucala,03/25/2025,03/25/2027,NUC-41584,Novartis,22.4,44,7.5,2.3,98.8,Dr. Emily Clark,Accepted
+Dupixent,03/13/2025,03/13/2026,DUP-43422,Novartis,22.6,42,7.7,2.1,97.7,Dr. Sarah Johnson,Accepted
+Xolair,07/22/2025,07/22/2026,XOL-19539,Novartis,26.4,58,7.3,1.4,98.7,Mike Lee,Accepted
+Trelegy,01-07-2025,01-07-2026,TRE-25376,BMS,27.3,59,7.3,1.1,98.1,Mike Lee,Accepted
+Alvesco,07/15/2025,07/15/2027,ALV-50425,Sanofi,22.9,55,6.8,2,99.2,Mike Lee,Rejected
+Pulmicort Flexhaler,06-11-2025,06-11-2027,PUL-15992,Roche,26.9,44,6,1.4,98.9,Dr. Emily Clark,Accepted
+Asmanex Twisthaler,04-11-2025,04-11-2026,ASM-59786,Roche,26.7,55,7,2.4,98.3,Dr. Emily Clark,Rejected
+Arnuity Ellipta,11/24/2025,11/24/2027,ARN-70401,Merck,25.9,51,6.3,1.8,98.7,John Smith,Accepted
+Flovent HFA,02/27/2025,02/27/2026,FLO-10836,J&J,21.1,60,6.4,1.8,97.5,Dr. Emily Clark,Accepted
+QVAR RediHaler,10/21/2025,10/21/2027,QVA-96413,BMS,20.1,57,7,0.1,98.8,Mike Lee,Accepted
+Metrostat-252,06-29-2025,01-21-2027,BAT-10953,MedPharma Industries,25.8,49,7.3,0.7,98.2,Sarah Johnson,Accepted
+Cefacillin-719,04-28-2025,12-17-2026,BAT-71570,Cipla,20.6,54,7.1,1.8,97.2,Dr. Emily Clark,Accepted
+Azithrosartan-148,04-03-2025,07-27-2027,BAT-75417,HealthCare Pharma Ltd,23.8,48,7.2,2.3,98.3,John Smith,Accepted
+Amozole-347,04-03-2025,02-12-2027,BAT-30801,MedPharma Industries,21.8,47,7.1,0.8,97.1,Dr. Emily Clark,Accepted
+Levopril-155,05-10-2025,08-04-2026,BAT-67078,Sun Pharma,25.7,47,7.3,1.6,97.7,Sarah Johnson,Accepted
+Claristat-551,03-18-2025,06-14-2026,BAT-98360,MedSupply Solutions,25.1,43,6.8,1.6,97.1,Dr. Emily Clark,Rejected
+Ciprozole-788,05-06-2025,02-21-2027,BAT-19528,HealthCare Pharma Ltd,21.1,50,7.1,1.1,99.8,Sarah Johnson,Accepted
+Eryflox-309,04-05-2025,06-04-2027,BAT-48772,Dr Reddys,21.6,52,6.9,1.4,99.4,Dr. Emily Clark,Rejected
+Cefastat-796,03-21-2025,09-03-2026,BAT-73557,Dr Reddys,25.8,45,6.9,2.3,98.1,Dr. Emily Clark,Accepted
+Doxyvir-820,02-23-2025,06-21-2026,BAT-52518,MedPharma Industries,20.3,47,6.8,1.9,98.8,Dr. Emily Clark,Accepted
+Metroflox-154,02-17-2025,05-23-2027,BAT-37647,MedPharma Industries,25.4,55,6.9,1.7,98.2,Dr. Raj Patel,Accepted
+Azithrocillin-945,03-12-2025,05-17-2027,BAT-41368,Sun Pharma,20.6,43,6.7,1.4,97.1,Dr. Emily Clark,Accepted
+Roximycin-659,06-17-2025,07-11-2026,BAT-89122,Sun Pharma,22.6,53,7.3,1.1,99.7,Sarah Johnson,Rejected
+Metrovir-921,01-31-2025,02-19-2026,BAT-74054,Dr Reddys,20.1,51,6.8,1.6,98.5,John Smith,Rejected
+Cefapril-539,01-01-2025,09-13-2026,BAT-98620,Sun Pharma,25,46,6.9,0.9,97.3,John Smith,Accepted
+Eryzole-318,04-14-2025,05-10-2026,BAT-22573,Dr Reddys,23,50,6.7,1.6,98.1,Dr. Emily Clark,Accepted
+Roxizole-308,03-29-2025,12-25-2026,BAT-36816,Cipla,22.1,53,6.9,0.6,99.2,Dr. Emily Clark,Accepted
+Levomycin-759,03-11-2025,02-26-2027,BAT-91592,MedSupply Solutions,20.9,55,7.1,0.6,97.8,Sarah Johnson,Accepted
+Metroazole-430,04-25-2025,09-10-2026,BAT-98850,MedSupply Solutions,25.4,54,7.2,2,99.3,Dr. Emily Clark,Accepted
+Roxipril-610,03-17-2025,07-25-2026,BAT-65091,HealthCare Pharma Ltd,21.8,43,7.2,1.5,97.6,Dr. Emily Clark,Rejected
+Roxicillin-442,06-09-2025,07-20-2027,BAT-91940,HealthCare Pharma Ltd,20.6,45,7.4,0.8,98.1,Sarah Johnson,Accepted
+Metrozole-828,06-21-2025,05-22-2027,BAT-23931,MedSupply Solutions,23.5,51,7.1,2.5,99,John Smith,Accepted
+Azithrostat-436,01-13-2025,05-21-2027,BAT-43290,MedPharma Industries,24.6,55,6.9,2.3,99.1,John Smith,Accepted
+Erymycin-202,02-22-2025,04-01-2027,BAT-59974,MedSupply Solutions,22.4,54,7.2,2,98.6,John Smith,Accepted
+Doxyolol-688,02-06-2025,11-16-2026,BAT-97576,Sun Pharma,20.9,51,6.7,0.8,97,Sarah Johnson,Accepted
+Clarizole-640,01-31-2025,02-17-2027,BAT-29062,Sun Pharma,26,41,6.6,1.5,97,Dr. Emily Clark,Accepted
+Amoflox-279,06-05-2025,04-25-2027,BAT-64105,MedPharma Industries,25.9,49,6.7,2,98.3,Sarah Johnson,Accepted
+Amosartan-119,04-19-2025,03-24-2027,BAT-65540,HealthCare Pharma Ltd,20.4,41,7.3,1.4,98,Dr. Raj Patel,Accepted
+Erysartan-737,05-09-2025,05-21-2026,BAT-13934,Cipla,21.4,43,7.1,0.6,99.4,Dr. Raj Patel,Accepted
+Erystat-591,06-24-2025,08-27-2026,BAT-11417,Dr Reddys,24.7,47,6.6,1,98.5,Dr. Raj Patel,Rejected
+Claricillin-802,01-02-2025,11-03-2026,BAT-53739,Cipla,23.4,43,6.8,2.3,98.7,Dr. Emily Clark,Accepted
+Ciproolol-131,04-15-2025,06-21-2027,BAT-91328,MedSupply Solutions,23.8,40,6.5,1.9,97.1,Dr. Emily Clark,Accepted
+Ciproflox-166,06-27-2025,08-26-2026,BAT-95603,MedSupply Solutions,22.7,50,6.6,0.9,99.2,John Smith,Accepted
+Azithrozole-572,03-02-2025,03-08-2027,BAT-11439,Dr Reddys,24.5,47,6.8,1.7,97.7,Sarah Johnson,Accepted
+Cefazole-656,01-03-2025,10-13-2026,BAT-69062,HealthCare Pharma Ltd,23.3,51,6.7,2.3,98.2,Sarah Johnson,Rejected
+Amomycin-871,05-12-2025,02-09-2027,BAT-74797,MedPharma Industries,25.5,40,6.9,1.9,98.7,Dr. Raj Patel,Accepted
+Levostat-192,06-08-2025,11-15-2027,BAT-93223,Sun Pharma,20.2,47,7.1,2.2,97.3,Dr. Emily Clark,Accepted
+Eryvir-177,02-24-2025,04-03-2026,BAT-36641,Dr Reddys,25,51,7.1,0.9,98.2,Dr. Emily Clark,Accepted
+Metroolol-751,03-03-2025,11-13-2026,BAT-28386,Dr Reddys,20.4,41,7.5,2,99.7,Sarah Johnson,Accepted
+Eryazole-286,01-13-2025,08-26-2026,BAT-41988,HealthCare Pharma Ltd,20.2,48,7.3,2.4,98.2,Dr. Emily Clark,Accepted
+Azithroflox-477,01-23-2025,01-30-2027,BAT-33966,Dr Reddys,22.8,44,7.5,2.4,98.7,Sarah Johnson,Accepted
+Levoflox-563,03-26-2025,09-09-2026,BAT-88057,MedPharma Industries,25.6,47,6.7,1.3,97.6,Dr. Emily Clark,Accepted
+Erypril-111,03-03-2025,05-28-2027,BAT-10484,MedSupply Solutions,23.9,44,6.8,1.2,97.2,Sarah Johnson,Accepted
+Cefaflox-540,04-25-2025,07-26-2026,BAT-86967,Cipla,20.9,50,7.2,1.6,98,Dr. Raj Patel,Accepted
+Amostat-197,02-01-2025,12-04-2026,BAT-68652,Sun Pharma,20.3,53,7,2,97.6,Dr. Emily Clark,Accepted
+Clariazole-784,05-07-2025,06-19-2027,BAT-24500,MedSupply Solutions,23.3,47,6.8,2.5,98.6,Dr. Emily Clark,Accepted
+Doxymycin-157,05-26-2025,12-14-2026,BAT-80575,Sun Pharma,25.7,53,7,1.1,98.4,Sarah Johnson,Rejected
+Doxyflox-455,02-04-2025,10-06-2026,BAT-39017,MedSupply Solutions,20.1,55,7.1,2.4,98,Sarah Johnson,Accepted
+Ciproazole-656,02-21-2025,06-25-2027,BAT-63746,HealthCare Pharma Ltd,25,49,7.5,1.2,98.6,John Smith,Accepted
+Levocillin-854,05-24-2025,10-11-2027,BAT-44251,Cipla,20.2,46,6.5,0.8,99.5,Dr. Emily Clark,Accepted
+Metromycin-384,01-27-2025,07-22-2026,BAT-94536,Cipla,20.1,50,7.3,1.4,97.9,John Smith,Rejected
+Azithromycin-401,05-18-2025,10-01-2026,BAT-47055,MedPharma Industries,23.3,46,7,2.1,97.9,Sarah Johnson,Accepted
+Clariflox-777,03-04-2025,05-23-2027,BAT-62663,MedSupply Solutions,24,51,6.9,1.1,98.9,John Smith,Accepted
+Roxisartan-315,06-14-2025,03-05-2027,BAT-16800,MedSupply Solutions,24.6,47,7.5,1,98.4,Dr. Raj Patel,Accepted
+Amoolol-145,06-29-2025,10-18-2027,BAT-35191,Dr Reddys,20.4,45,7.2,2.2,99.3,Dr. Raj Patel,Accepted
+Doxysartan-492,05-18-2025,01-17-2027,BAT-29870,Cipla,21.4,47,6.6,0.9,98.2,Dr. Raj Patel,Accepted
+Levoolol-381,03-15-2025,09-26-2026,BAT-20085,Sun Pharma,25.3,41,7,2.4,99.2,Sarah Johnson,Accepted
+Roxiflox-813,01-25-2025,01-15-2027,BAT-93676,Dr Reddys,24.2,50,6.5,0.7,99.1,Dr. Emily Clark,Accepted
+Azithroazole-642,06-28-2025,12-07-2027,BAT-18933,Dr Reddys,23.1,52,6.9,1.2,99.3,Dr. Emily Clark,Accepted
+Roxiazole-127,04-06-2025,11-29-2026,BAT-10452,MedPharma Industries,20.6,48,7.4,1.5,99,Sarah Johnson,Accepted
+Cipromycin-664,04-26-2025,09-22-2027,BAT-15652,Dr Reddys,22.4,52,6.7,1.8,98.7,Dr. Raj Patel,Accepted
+Roxiolol-684,06-02-2025,11-11-2026,BAT-14042,MedSupply Solutions,21.7,44,6.7,1.6,97.5,John Smith,Accepted
+Levoazole-764,06-06-2025,12-19-2026,BAT-54139,MedPharma Industries,21.6,49,6.9,1.1,97.9,John Smith,Accepted
+Claripril-926,02-06-2025,06-23-2027,BAT-83731,Sun Pharma,25.9,53,7.4,2.4,99.1,Dr. Emily Clark,Accepted
+Clariolol-731,02-01-2025,06-14-2027,BAT-48379,Cipla,25.9,55,7.3,1.7,97.7,Dr. Raj Patel,Accepted
+Levozole-880,03-13-2025,06-17-2026,BAT-53669,Dr Reddys,21.1,54,6.8,0.9,97.5,Sarah Johnson,Accepted
+Cefavir-774,06-16-2025,09-03-2026,BAT-73889,Cipla,20.9,43,6.7,2.3,98.1,Dr. Raj Patel,Rejected
+Doxystat-467,03-08-2025,09-23-2026,BAT-53232,HealthCare Pharma Ltd,25.9,49,7.1,1.5,98.4,Sarah Johnson,Accepted
+Cefasartan-233,05-17-2025,05-17-2027,BAT-26359,Cipla,23.9,45,6.6,2.4,97.9,Sarah Johnson,Rejected
+Clarimycin-322,01-23-2025,11-21-2026,BAT-45835,MedSupply Solutions,21.6,41,6.7,1.2,99.8,Sarah Johnson,Accepted
+Cefamycin-341,06-26-2025,12-09-2027,BAT-73114,HealthCare Pharma Ltd,23.1,43,6.9,0.6,97.4,Sarah Johnson,Accepted
+Ciprostat-583,01-19-2025,02-28-2027,BAT-28300,MedPharma Industries,25.9,47,7.1,0.9,99.6,Dr. Raj Patel,Accepted
+Cefaazole-840,05-05-2025,10-07-2027,BAT-14016,Sun Pharma,20.1,47,6.5,1.7,98.5,Dr. Raj Patel,Rejected
+Ciprocillin-517,05-29-2025,03-05-2027,BAT-66167,MedSupply Solutions,22.7,52,7.2,1,97.9,Dr. Raj Patel,Accepted
+Metropril-511,01-27-2025,06-27-2027,BAT-86903,Sun Pharma,22.3,49,6.5,0.6,97.8,John Smith,Rejected
+Eryolol-156,04-12-2025,12-03-2026,BAT-68575,Sun Pharma,24.8,45,7.2,1.9,99.4,Dr. Raj Patel,Accepted
+Levosartan-874,04-02-2025,05-18-2026,BAT-10294,MedSupply Solutions,25.3,51,6.8,1.9,99.6,Sarah Johnson,Accepted
+Ciprovir-871,02-02-2025,01-17-2027,BAT-59398,MedSupply Solutions,21,42,6.6,2.1,98.6,Dr. Emily Clark,Accepted
+Cefaolol-465,03-20-2025,06-15-2026,BAT-44099,MedPharma Industries,25.9,45,7.5,2.3,97.9,Dr. Raj Patel,Accepted
+Doxypril-481,06-09-2025,04-06-2027,BAT-98185,MedPharma Industries,25.3,42,6.8,1.1,99.9,Dr. Emily Clark,Rejected
+Azithroolol-442,05-06-2025,09-26-2027,BAT-28913,HealthCare Pharma Ltd,24.7,42,7.1,0.9,99.8,Sarah Johnson,Rejected
+Amovir-234,06-06-2025,11-13-2026,BAT-91274,HealthCare Pharma Ltd,20,51,7,1.8,97.8,John Smith,Accepted
+Azithrovir-917,04-04-2025,09-27-2026,BAT-19342,HealthCare Pharma Ltd,24.9,50,7.3,2.2,97.9,Dr. Emily Clark,Accepted
+Ciprosartan-601,04-30-2025,08-07-2026,BAT-11630,MedPharma Industries,23.2,40,7,1.6,99.2,Dr. Raj Patel,Rejected
+Metrosartan-412,02-28-2025,11-07-2026,BAT-98174,MedSupply Solutions,24.1,54,7.4,2.5,99.3,Dr. Raj Patel,Accepted
+Amocillin-817,06-06-2025,11-22-2026,BAT-40889,MedSupply Solutions,24.9,48,6.8,0.7,97.2,John Smith,Rejected
+Roxistat-795,01-19-2025,07-21-2026,BAT-57107,Dr Reddys,21.6,55,7.5,1.2,97.6,Sarah Johnson,Rejected
+Clarivir-260,02-14-2025,03-26-2027,BAT-73681,Dr Reddys,21,43,6.6,1.1,99.4,Sarah Johnson,Accepted
+Roxivir-217,03-20-2025,08-19-2026,BAT-86000,Dr Reddys,23.6,55,6.9,2.3,99.6,Dr. Emily Clark,Accepted
+Azithropril-747,04-29-2025,05-06-2026,BAT-35660,Cipla,23.1,51,6.8,0.6,98.3,Sarah Johnson,Accepted
+Doxyazole-614,06-03-2025,02-16-2027,BAT-56565,HealthCare Pharma Ltd,22.2,40,7.3,1.7,99.2,Dr. Emily Clark,Accepted
+Amoazole-465,01-23-2025,11-19-2026,BAT-14859,Cipla,23.2,55,7.5,0.6,99.6,John Smith,Accepted
+Clarisartan-217,04-19-2025,06-21-2026,BAT-57861,HealthCare Pharma Ltd,20.9,41,6.7,0.6,98.4,John Smith,Accepted
+Doxyzole-697,06-21-2025,07-11-2027,BAT-19129,Cipla,20.8,40,7.1,0.8,98.9,Dr. Raj Patel,Accepted
+Metrocillin-835,01-16-2025,01-27-2026,BAT-85607,HealthCare Pharma Ltd,25.8,49,6.9,1.6,97.4,John Smith,Rejected
+Levovir-987,01-14-2025,12-04-2026,BAT-85367,Dr Reddys,25,49,6.8,0.8,98.2,John Smith,Accepted
+Amopril-842,04-05-2025,04-05-2026,BAT-21652,Cipla,21.1,42,7,0.5,97.5,Dr. Raj Patel,Accepted
+Doxycillin-113,05-15-2025,12-09-2026,BAT-46639,MedSupply Solutions,22.9,51,7.5,1.6,97.5,Dr. Emily Clark,Accepted
+Erycillin-680,06-13-2025,06-28-2027,BAT-71163,MedSupply Solutions,25.2,48,7.3,0.9,98.4,Sarah Johnson,Rejected
+Cipropril-145,03-22-2025,01-21-2027,BAT-52938,Cipla,22.1,43,6.9,2.3,98.8,Sarah Johnson,Accepted
+Zidovudine,11-02-2025,22-05-2027,MOT-37273,Aurobindo Pharma,21.9,48,6.9,1.28,99.7,Dr. Anil Sharma,Accepted
+Lamivudine,02-11-2025,16-10-2028,MOT-50283,Abbott Healthcare,21.5,43,7.1,0.82,98.8,Dr. Vikram Rao,Accepted
+Nevirapine,15-06-2025,17-05-2027,MOT-18291,Pfizer India,22.4,41,7.4,0.23,98.7,Dr. Vikram Rao,Accepted
+Lamivudine/Zidovudine,12-06-2025,19-04-2027,MOT-86475,Lupin Pharmaceuticals,21.8,44,7.4,1.83,99.2,Dr. Anil Sharma,Accepted
+Efavirenz,19-10-2025,26-09-2028,MOT-47559,Sun Pharma Ltd,23.8,41,7.1,0.73,99.4,Dr. Vikram Rao,Rejected
+Abacavir,11-02-2025,25-11-2027,MOT-73406,Pfizer India,21.1,51,7.4,0.47,97.4,Dr. Meera Iyer,Accepted
+Atazanavir,29-03-2025,26-06-2027,MOT-79159,Sun Pharma Ltd,21.4,45,7.3,0.33,98.6,Dr. Raj Patel,Accepted
+Emtricitabine,06-02-2025,10-04-2027,MOT-17020,Sun Pharma Ltd,20.5,44,7.2,0.79,98.1,Dr. Raj Patel,Accepted
+Lopinavir/Ritonavir,07-06-2025,27-01-2027,MOT-35695,Torrent Pharmaceuticals,24.2,46,7,1.59,98.7,Dr. Anil Sharma,Accepted
+Tenofovir disoproxil fumarate,13-08-2025,07-09-2027,MOT-89538,Torrent Pharmaceuticals,23.6,45,6.5,1.84,98.1,Dr. Susan Thomas,Accepted
+Dolutegravir,11-01-2025,19-11-2026,MOT-68235,Sun Pharma Ltd,20,53,6.9,1.74,98.6,Dr. Anil Sharma,Accepted
+Remdesivir,30-08-2025,13-08-2028,MOT-27219,Lupin Pharmaceuticals,22.7,59,6.8,0.66,97.6,Dr. Susan Thomas,Accepted
+Dexamethasone,19-05-2025,23-04-2028,MOT-14131,Torrent Pharmaceuticals,20.8,56,6.9,1.74,97.1,Dr. Raj Patel,Rejected
+Molnupiravir,15-06-2025,02-02-2028,MOT-44805,Cipla Ltd,23.2,48,6.6,0.85,99.1,Dr. Susan Thomas,Accepted
+Ceftriaxone,04-10-2025,16-05-2027,MOT-96867,Aurobindo Pharma,20.4,59,7.1,1.64,97,Dr. Anil Sharma,Accepted
+Ciprofloxacin,25-01-2025,11-06-2027,MOT-61344,Glenmark Pharma,21.4,43,7,0.88,99,Dr. Raj Patel,Rejected
+Azithromycin,03-09-2025,15-11-2027,MOT-13963,Glenmark Pharma,24.6,57,6.5,0.7,97.9,Dr. Susan Thomas,Accepted
+Albendazole,23-12-2025,24-08-2028,MOT-50548,Abbott Healthcare,20.5,55,7.4,0.81,98,Dr. Vikram Rao,Accepted
+Ivermectin,23-08-2025,12-01-2028,MOT-41494,Cipla Ltd,21.2,44,6.6,1.22,97.2,Dr. Meera Iyer,Accepted
+Amoxicillin,24-10-2025,16-09-2027,MOT-42398,Torrent Pharmaceuticals,20.3,49,7.1,1.25,97.7,Dr. Meera Iyer,Rejected
+Metformin,18-12-2025,18-08-2028,MOT-30291,Dr Reddys Laboratories,22.1,43,6.5,1.63,99.4,Dr. Susan Thomas,Accepted
+Atorvastatin,08-02-2025,29-09-2026,MOT-88637,Zydus Lifesciences,22.4,48,6.9,0.81,97.7,Dr. Meera Iyer,Accepted
+Aspirin,18-09-2025,04-07-2027,MOT-23254,Glenmark Pharma,24.8,41,7.3,0.17,99.4,Dr. Raj Patel,Accepted
+Clopidogrel,19-05-2025,22-11-2027,MOT-44626,Zydus Lifesciences,20.2,41,6.6,0.25,98.6,Dr. Raj Patel,Accepted
+Omeprazole,25-08-2025,21-08-2027,MOT-72313,Torrent Pharmaceuticals,21.3,58,7.1,0.19,99.1,Dr. Anil Sharma,Accepted
+Pantoprazole,12-05-2025,25-04-2028,MOT-61233,Abbott Healthcare,23.8,41,7.4,0.27,99,Dr. Raj Patel,Accepted
+Losartan,30-05-2025,05-03-2028,MOT-20410,Torrent Pharmaceuticals,24.4,47,7.3,0.85,99.4,Dr. Vikram Rao,Accepted
+Amlodipine,09-03-2025,10-06-2027,MOT-27361,Sun Pharma Ltd,24.9,45,6.8,0.11,98.8,Dr. Vikram Rao,Accepted
+Telmisartan,21-05-2025,09-04-2027,MOT-83030,Aurobindo Pharma,25,50,6.6,0.94,98.2,Dr. Vikram Rao,Accepted
+Metoprolol,07-11-2025,21-08-2028,MOT-15167,Sun Pharma Ltd,22.7,46,6.8,1.36,99.4,Dr. Anil Sharma,Accepted
+Paracetamol,22-06-2025,03-11-2027,MOT-73218,Abbott Healthcare,22.8,52,7.3,1.33,99.8,Dr. Anil Sharma,Accepted
+Ibuprofen,12-12-2025,10-01-2028,MOT-89615,Zydus Lifesciences,21.3,42,6.9,1.4,99.5,Dr. Meera Iyer,Accepted
+Diclofenac,12-05-2025,10-01-2028,MOT-13198,Glenmark Pharma,21.3,51,7.3,1.67,97.6,Dr. Meera Iyer,Rejected
+Naproxen,16-03-2025,05-01-2028,MOT-66689,Cipla Ltd,20.4,47,7.2,0.78,97.9,Dr. Susan Thomas,Accepted
+Ketorolac,04-05-2025,28-11-2026,MOT-52107,Zydus Lifesciences,21,41,6.8,1.06,99.7,Dr. Anil Sharma,Accepted
+Tramadol,11-07-2025,23-09-2027,MOT-43553,Dr Reddys Laboratories,20.3,55,6.5,1.24,98.6,Dr. Vikram Rao,Rejected
+Codeine,22-12-2025,08-09-2028,MOT-53628,Cipla Ltd,22.7,41,7,0.37,98.4,Dr. Vikram Rao,Accepted
+Morphine,10-07-2025,01-07-2027,MOT-77646,Sun Pharma Ltd,23,58,6.5,0.29,97.3,Dr. Vikram Rao,Rejected
+Fentanyl,01-06-2025,07-09-2027,MOT-34171,Lupin Pharmaceuticals,20.5,44,6.5,1.71,98.9,Dr. Raj Patel,Accepted
+Buprenorphine,08-06-2025,03-07-2027,MOT-46346,Sun Pharma Ltd,21.4,56,7.4,1.74,99.9,Dr. Raj Patel,Accepted
+Insulin Aspart,21-02-2025,22-06-2027,MOT-53217,Dr Reddys Laboratories,23.8,59,7.1,1.36,97.9,Dr. Anil Sharma,Rejected
+Insulin Lispro,24-09-2025,03-09-2028,MOT-23227,Aurobindo Pharma,21.3,55,7.3,0.93,98.4,Dr. Raj Patel,Accepted
+Insulin Detemir,19-01-2025,10-02-2027,MOT-67936,Zydus Lifesciences,22.8,46,6.8,1.24,99.6,Dr. Susan Thomas,Rejected
+Glimepiride,23-11-2025,22-08-2028,MOT-97428,Dr Reddys Laboratories,21.6,57,6.9,0.41,97.4,Dr. Vikram Rao,Accepted
+Gliclazide,08-02-2025,24-07-2027,MOT-25070,Zydus Lifesciences,22.3,41,6.7,0.14,99.1,Dr. Anil Sharma,Accepted
+Sitagliptin,07-06-2025,31-08-2027,MOT-42283,Abbott Healthcare,20.1,51,7.2,1.1,98.7,Dr. Anil Sharma,Accepted
+Vildagliptin,10-07-2025,18-01-2028,MOT-69249,Cipla Ltd,24.2,48,6.9,0.18,99.5,Dr. Susan Thomas,Accepted
+Linagliptin,29-12-2025,14-07-2028,MOT-41856,Abbott Healthcare,24.1,47,7.3,0.59,99.8,Dr. Susan Thomas,Accepted
+Empagliflozin,01-09-2025,17-06-2027,MOT-64860,Pfizer India,24.6,43,6.9,0.86,99.2,Dr. Vikram Rao,Accepted
+Dapagliflozin,30-08-2025,13-12-2027,MOT-35635,Glenmark Pharma,22,55,7.4,0.45,99.2,Dr. Raj Patel,Accepted
+Canagliflozin,31-03-2025,08-08-2027,MOT-49671,Aurobindo Pharma,24.6,45,7.4,0.77,99.9,Dr. Raj Patel,Accepted
+Salbutamol,08-10-2025,12-05-2027,MOT-11599,Sun Pharma Ltd,23.7,60,6.7,0.45,99.6,Dr. Meera Iyer,Accepted
+Formoterol,24-05-2025,31-01-2028,MOT-85757,Lupin Pharmaceuticals,24.5,58,6.7,1.48,98.8,Dr. Meera Iyer,Accepted
+Budesonide,15-12-2025,28-08-2027,MOT-99341,Lupin Pharmaceuticals,24,43,7.3,0.77,97.1,Dr. Vikram Rao,Accepted
+Fluticasone,04-08-2025,23-09-2027,MOT-55399,Sun Pharma Ltd,21.5,44,6.7,0.22,98.2,Dr. Vikram Rao,Accepted
+Montelukast,26-03-2025,06-04-2027,MOT-56620,Sun Pharma Ltd,24.4,53,6.7,0.11,97.3,Dr. Meera Iyer,Accepted
+Theophylline,26-01-2025,25-03-2027,MOT-45159,Zydus Lifesciences,23.1,43,7.4,1.01,99.1,Dr. Anil Sharma,Accepted
+Tiotropium,28-06-2025,16-07-2027,MOT-42374,Abbott Healthcare,20.4,41,6.6,0.36,98.4,Dr. Vikram Rao,Accepted
+Cefixime,30-12-2025,15-06-2028,MOT-40521,Sun Pharma Ltd,21.3,52,6.9,1.52,97,Dr. Vikram Rao,Accepted
+Ceftazidime,01-08-2025,31-01-2028,MOT-42404,Zydus Lifesciences,23.8,59,7.2,0.5,99.7,Dr. Vikram Rao,Accepted
+Cefepime,03-12-2025,16-12-2027,MOT-20223,Glenmark Pharma,21.4,60,7,0.18,98.3,Dr. Anil Sharma,Accepted
+Amikacin,14-08-2025,19-02-2028,MOT-95499,Lupin Pharmaceuticals,20.1,40,7.2,1.62,99.6,Dr. Anil Sharma,Accepted
+Gentamicin,15-08-2025,15-03-2027,MOT-92418,Lupin Pharmaceuticals,22.6,43,6.9,1.88,98,Dr. Raj Patel,Accepted
+Vancomycin,11-10-2025,15-12-2027,MOT-54492,Glenmark Pharma,21.1,46,6.7,0.26,99.8,Dr. Raj Patel,Accepted
+Linezolid,27-02-2025,01-09-2026,MOT-87052,Abbott Healthcare,22.2,58,7,1.14,99.5,Dr. Raj Patel,Accepted
+Doxycycline,22-01-2025,22-09-2026,MOT-32293,Glenmark Pharma,24.1,44,6.8,0.56,99,Dr. Susan Thomas,Accepted
+Minocycline,28-08-2025,02-07-2028,MOT-13437,Aurobindo Pharma,20.7,46,7.3,1.42,97.7,Dr. Vikram Rao,Accepted
+Clarithromycin,18-10-2025,08-11-2027,MOT-62736,Dr Reddys Laboratories,24.8,58,6.8,1.88,99.2,Dr. Raj Patel,Accepted
+Erythromycin,11-08-2025,30-08-2027,MOT-12985,Glenmark Pharma,21.2,60,6.7,1.99,97.2,Dr. Susan Thomas,Rejected
+Roxithromycin,22-02-2025,28-01-2027,MOT-36231,Dr Reddys Laboratories,20.6,47,7,0.76,99.4,Dr. Susan Thomas,Rejected
+Levofloxacin,27-09-2025,06-04-2028,MOT-46324,Torrent Pharmaceuticals,20,40,7.4,1.91,99,Dr. Susan Thomas,Rejected
+Moxifloxacin,07-06-2025,18-01-2027,MOT-51456,Torrent Pharmaceuticals,21.6,55,7.4,0.38,99.7,Dr. Anil Sharma,Accepted
+Ofloxacin,01-10-2025,21-08-2028,MOT-42924,Torrent Pharmaceuticals,21.2,47,7.4,1.75,99.2,Dr. Susan Thomas,Accepted
+Norfloxacin,27-10-2025,24-05-2027,MOT-42873,Aurobindo Pharma,20.9,49,6.6,0.21,99.7,Dr. Susan Thomas,Accepted
+Rifampicin,24-03-2025,28-01-2027,MOT-53847,Pfizer India,23.1,40,7.1,1.75,99.4,Dr. Vikram Rao,Accepted
+Isoniazid,06-12-2025,30-01-2028,MOT-68017,Sun Pharma Ltd,23.9,41,7,0.97,99.2,Dr. Raj Patel,Accepted
+Pyrazinamide,01-11-2025,03-02-2028,MOT-75188,Sun Pharma Ltd,23.4,54,7.2,1.54,97.8,Dr. Vikram Rao,Accepted
+Ethambutol,30-11-2025,18-03-2028,MOT-49826,Glenmark Pharma,24.8,48,6.7,0.37,97.4,Dr. Raj Patel,Rejected
+Clotrimazole,14-05-2025,07-04-2028,MOT-11872,Pfizer India,24.3,44,7.2,1.24,97.7,Dr. Anil Sharma,Accepted
+Fluconazole,01-07-2025,31-12-2027,MOT-54634,Abbott Healthcare,24.5,56,7,1.65,98.4,Dr. Vikram Rao,Accepted
+Ketoconazole,23-11-2025,08-09-2028,MOT-10552,Pfizer India,22.6,58,6.5,1.87,98,Dr. Susan Thomas,Accepted
+Voriconazole,10-08-2025,14-02-2028,MOT-69998,Torrent Pharmaceuticals,22,50,6.9,1.04,97.2,Dr. Anil Sharma,Accepted
+Acyclovir,18-10-2025,17-06-2027,MOT-64836,Cipla Ltd,21.6,48,7.3,0.18,98.9,Dr. Raj Patel,Accepted
+Valacyclovir,12-07-2025,12-12-2027,MOT-44499,Lupin Pharmaceuticals,23.7,54,6.9,1.74,97.1,Dr. Raj Patel,Accepted
+Famciclovir,31-05-2025,12-02-2027,MOT-10825,Sun Pharma Ltd,21.7,59,7.2,1.89,99.6,Dr. Meera Iyer,Accepted
+Oseltamivir,30-12-2025,11-10-2028,MOT-37924,Aurobindo Pharma,22,56,6.7,1.23,97.2,Dr. Meera Iyer,Rejected
+Ranitidine,08-04-2025,31-03-2028,MOT-40864,Lupin Pharmaceuticals,21.8,43,7.1,1.84,97.7,Dr. Susan Thomas,Accepted
+Famotidine,18-04-2025,07-04-2027,MOT-99316,Aurobindo Pharma,24.4,44,7.2,0.64,99.7,Dr. Meera Iyer,Rejected
+Cimetidine,06-07-2025,20-10-2027,MOT-34966,Sun Pharma Ltd,21.5,45,7.3,0.99,97.2,Dr. Vikram Rao,Rejected
+Ondansetron,19-04-2025,28-04-2027,MOT-94608,Zydus Lifesciences,22.4,50,7,0.73,97.6,Dr. Anil Sharma,Accepted
+Domperidone,19-05-2025,18-12-2026,MOT-56160,Glenmark Pharma,24.8,41,6.8,0.84,99.4,Dr. Raj Patel,Accepted
+Metoclopramide,11-10-2025,07-01-2028,MOT-13118,Aurobindo Pharma,23.2,52,7.3,1.81,99.7,Dr. Susan Thomas,Accepted
+Sertraline,30-12-2025,17-10-2028,MOT-85791,Lupin Pharmaceuticals,22,55,7.2,0.88,98.8,Dr. Raj Patel,Accepted
+Fluoxetine,23-08-2025,26-08-2027,MOT-24394,Pfizer India,21.7,44,7.3,0.97,97.3,Dr. Anil Sharma,Accepted
+Paroxetine,01-03-2025,04-01-2028,MOT-38581,Cipla Ltd,23.6,45,6.7,1.73,97.4,Dr. Raj Patel,Accepted
+Escitalopram,08-06-2025,26-09-2027,MOT-21931,Cipla Ltd,21.1,59,7.3,0.44,99.5,Dr. Meera Iyer,Rejected
+Amitriptyline,24-09-2025,22-10-2027,MOT-45734,Torrent Pharmaceuticals,22.9,58,7.5,1.65,97,Dr. Susan Thomas,Accepted
+Imipramine,30-07-2025,03-02-2028,MOT-21837,Abbott Healthcare,23,41,7.4,0.41,99.6,Dr. Susan Thomas,Accepted
+Venlafaxine,29-03-2025,16-12-2026,MOT-95808,Glenmark Pharma,21,47,7.1,1.44,97.2,Dr. Anil Sharma,Rejected
+Duloxetine,10-12-2025,27-12-2027,MOT-26197,Pfizer India,21.9,54,6.9,0.14,99.6,Dr. Meera Iyer,Accepted
+Diazepam,12-06-2025,24-04-2027,MOT-70692,Glenmark Pharma,20.2,58,7.2,1.92,98.7,Dr. Susan Thomas,Accepted
+Lorazepam,02-01-2025,31-01-2027,MOT-22716,Dr Reddys Laboratories,24.4,58,6.6,1.7,99.7,Dr. Raj Patel,Accepted
+Alprazolam,20-02-2025,03-07-2027,MOT-75136,Torrent Pharmaceuticals,23.2,54,6.7,0.85,98.9,Dr. Susan Thomas,Accepted
+Clonazepam,20-09-2025,14-01-2028,MOT-66138,Abbott Healthcare,21,50,6.5,0.76,98.5,Dr. Vikram Rao,Rejected
+Haloperidol,01-09-2025,13-11-2027,MOT-62571,Sun Pharma Ltd,23.9,44,7,0.16,98.7,Dr. Anil Sharma,Accepted
+Risperidone,16-11-2025,10-06-2027,MOT-24989,Cipla Ltd,24,58,7.1,1.15,98.5,Dr. Anil Sharma,Accepted
+Olanzapine,06-08-2025,27-11-2027,MOT-53888,Pfizer India,24.2,57,7.2,1.45,98.5,Dr. Meera Iyer,Accepted
+Quetiapine,14-02-2025,16-05-2027,MOT-55538,Lupin Pharmaceuticals,24,40,7,1.19,97.6,Dr. Raj Patel,Accepted
+Aripiprazole,25-08-2025,24-06-2027,MOT-58293,Dr Reddys Laboratories,22.9,45,6.7,1.85,97.5,Dr. Vikram Rao,Accepted
+Clozapine,16-08-2025,14-03-2027,MOT-49687,Cipla Ltd,21.5,53,6.5,1.27,98.9,Dr. Meera Iyer,Accepted
+Lithium carbonate,17-10-2025,08-11-2027,MOT-50901,Aurobindo Pharma,24.5,47,7.4,1.91,99.6,Dr. Meera Iyer,Rejected
+Phenytoin,10-11-2025,14-10-2027,MOT-78935,Abbott Healthcare,22.2,54,7,2,98.5,Dr. Vikram Rao,Accepted
+Carbamazepine,06-12-2025,04-11-2028,MOT-72201,Lupin Pharmaceuticals,23,43,7.2,0.41,99.4,Dr. Susan Thomas,Accepted
+Valproic acid,06-10-2025,21-02-2028,MOT-66523,Sun Pharma Ltd,20.3,46,6.5,1.61,97.2,Dr. Susan Thomas,Accepted
+Levetiracetam,22-01-2025,07-05-2027,MOT-65161,Dr Reddys Laboratories,20.5,54,7.2,0.26,98.8,Dr. Raj Patel,Accepted
+Gabapentin,12-02-2025,22-09-2026,MOT-19244,Sun Pharma Ltd,21.4,43,7,1.91,99.1,Dr. Vikram Rao,Accepted
+Pregabalin,24-08-2025,24-08-2027,MOT-74139,Dr Reddys Laboratories,24,58,7.3,1.51,97.6,Dr. Raj Patel,Rejected
+Topiramate,13-01-2025,03-10-2026,MOT-70036,Aurobindo Pharma,22.7,60,7.5,1.35,97.3,Dr. Vikram Rao,Accepted
+Lamotrigine,29-10-2025,21-03-2028,MOT-98857,Lupin Pharmaceuticals,22.5,40,6.9,1.51,97.6,Dr. Vikram Rao,Rejected
+Hydrochlorothiazide,02-10-2025,03-04-2027,MOT-86585,Pfizer India,23.5,46,7.4,0.46,99.4,Dr. Raj Patel,Accepted
+Furosemide,13-04-2025,15-12-2026,MOT-65015,Abbott Healthcare,24.5,43,7.4,1.33,98.7,Dr. Susan Thomas,Accepted
+Spironolactone,16-06-2025,16-05-2028,MOT-16236,Glenmark Pharma,21.9,52,6.7,0.42,98.7,Dr. Meera Iyer,Rejected
+Warfarin,30-11-2025,25-05-2028,MOT-21911,Aurobindo Pharma,24.8,54,7.2,1.99,99.8,Dr. Meera Iyer,Accepted
+Heparin,29-09-2025,06-05-2027,MOT-12078,Dr Reddys Laboratories,21,50,6.6,1.35,98.7,Dr. Raj Patel,Rejected
+Enoxaparin,28-09-2025,25-11-2027,MOT-60545,Dr Reddys Laboratories,20.5,53,7.5,1.27,98.6,Dr. Susan Thomas,Accepted
+Apixaban,18-04-2025,30-05-2027,MOT-57784,Pfizer India,24.2,43,6.8,0.53,99.2,Dr. Vikram Rao,Rejected
+Rivaroxaban,08-04-2025,26-03-2028,MOT-21031,Glenmark Pharma,24.3,41,6.9,1.25,98.9,Dr. Susan Thomas,Accepted
+Ferrous sulfate,02-04-2025,31-01-2027,MOT-40419,Cipla Ltd,21.3,40,7.2,0.86,97.1,Dr. Susan Thomas,Accepted
+Ferrous gluconate,31-10-2025,07-11-2027,MOT-96622,Cipla Ltd,20.9,51,7.5,0.17,99.7,Dr. Vikram Rao,Rejected
+Vitamin B12,09-11-2025,30-11-2027,MOT-76547,Abbott Healthcare,21.1,44,6.5,0.72,98.4,Dr. Raj Patel,Accepted
+Folic acid,08-07-2025,05-02-2028,MOT-62152,Lupin Pharmaceuticals,23.1,44,6.5,1.29,99.8,Dr. Raj Patel,Accepted
+Vitamin D3,16-10-2025,24-04-2027,MOT-45654,Pfizer India,23.7,45,7.3,0.77,98.4,Dr. Raj Patel,Rejected
+Vitamin C,21-04-2025,27-04-2027,MOT-42138,Abbott Healthcare,20.1,55,6.5,1.55,98.1,Dr. Anil Sharma,Accepted
+Calcium carbonate,10-07-2025,09-04-2027,MOT-89043,Dr Reddys Laboratories,23.7,41,6.7,0.42,97.1,Dr. Raj Patel,Rejected
+Zinc gluconate,18-09-2025,02-09-2028,MOT-75360,Abbott Healthcare,21.3,41,7,0.6,99.6,Dr. Susan Thomas,Accepted
+Levothyroxine,28-11-2025,31-08-2028,MOT-97761,Lupin Pharmaceuticals,20.6,55,7,1.38,99.5,Dr. Susan Thomas,Rejected
+Propylthiouracil,13-08-2025,06-02-2027,MOT-85114,Lupin Pharmaceuticals,23,51,6.7,1.85,97.8,Dr. Anil Sharma,Accepted
+Methimazole,17-11-2025,03-12-2027,MOT-65144,Abbott Healthcare,20.8,58,7.5,0.83,97.9,Dr. Meera Iyer,Rejected
+Prednisolone,02-03-2025,11-08-2027,MOT-69372,Sun Pharma Ltd,23.3,40,7,0.54,97.6,Dr. Vikram Rao,Rejected
+Hydrocortisone,11-05-2025,04-11-2026,MOT-68042,Glenmark Pharma,22.3,48,6.5,1.88,98.6,Dr. Meera Iyer,Accepted
+Methylprednisolone,23-05-2025,29-10-2027,MOT-25549,Torrent Pharmaceuticals,24.6,47,7,1.26,97.9,Dr. Anil Sharma,Accepted
+Abacavir/Lamivudine/Zidovudine,14-07-2025,18-08-2026,FSA-707-1,Cipla Ltd,22.8,61,7.2,1.36,97.3,Dr. Meera Iyer,Accepted
+Emtricitabine/Tenofovir alafenamide,29-03-2025,03-05-2026,FSA-117-2,Dr Reddy’s Laboratories,21.4,40,7.3,1.93,97.4,Dr. Raj Patel,Accepted
+Abacavir/Lamivudine,07-05-2025,07-04-2027,FSA-562-3,Lupin Pharmaceuticals,21.6,42,6.9,1.74,97.8,Dr. Susan Thomas,Accepted
+Dolutegravir/Lamivudine/TDF,20-03-2025,18-02-2027,FSA-229-4,Aurobindo Pharma,24.2,57,7.4,0.24,97.2,Dr. Vikram Rao,Accepted
+Dolutegravir/Emtricitabine/TAF,31-05-2025,01-05-2027,FSA-570-5,Zydus Lifesciences,20.2,41,6.6,0.64,98.6,Dr. Neha Kulkarni,Rejected
+Caffeine citrate,13-04-2025,14-03-2027,FSA-569-6,Torrent Pharma,21.1,47,7.3,0.61,97.7,Dr. Arjun Malhotra,Accepted
+Tocilizumab,16-09-2025,21-10-2026,FSA-461-7,Glenmark Pharma,24.6,48,6.8,1.78,97.5,Dr. Pooja Nair,Accepted
+Insulin Human,16-08-2025,20-09-2026,FSA-675-8,Pfizer India,22.6,43,7.2,1.37,97.2,Dr. Suresh Menon,Accepted
+Insulin Glargine,19-04-2025,20-03-2027,FSA-837-9,Abbott Healthcare,21.8,59,7.3,0.29,97.9,Dr. Kavita Desai,Accepted
+Mtb-specific antigen rCFP-10/rdESAT-6,28-06-2025,29-05-2027,FSA-168-10,MSD India,22.3,59,6.8,1.79,98.4,Dr. Rohan Mehta,Accepted
+Atoltivimab/Maftivimab/Odesivimab,03-08-2025,04-07-2027,FSA-470-11,Sanofi India,25.3,57,7.2,1.07,98.1,Dr. Ayesha Khan,Accepted
+Trastuzumab,16-03-2025,20-04-2026,FSA-857-12,Bayer Pharma,20.5,52,7.2,1.68,97.8,Dr. Anil Sharma,Accepted
+Rituximab,22-03-2025,20-02-2027,FSA-293-13,Novartis India,23.3,59,6.8,0.55,97.8,Dr. Meera Iyer,Accepted
+Nirmatrelvir/Ritonavir,23-01-2025,24-12-2026,FSA-520-14,Roche India,25.3,59,6.7,0.33,99.9,Dr. Raj Patel,Rejected
+Zinc (sulfate),28-04-2025,02-06-2026,FSA-989-15,Biocon Ltd,23.3,57,6.6,1.32,99.8,Dr. Susan Thomas,Accepted
+Dapivirine,11-04-2025,16-05-2026,FSA-599-16,Alkem Laboratories,21.6,52,7.4,1.97,97.9,Dr. Vikram Rao,Accepted
+Fexinidazole,11-07-2025,11-06-2027,FSA-505-17,Intas Pharmaceuticals,21.5,65,7.4,1.42,99,Dr. Neha Kulkarni,Accepted
+Artesunate/Pyronaridine,26-07-2025,30-08-2026,FSA-164-18,Mankind Pharma,20.5,44,7,1.39,98.1,Dr. Arjun Malhotra,Accepted
+Arpraziquantel,28-10-2025,28-09-2027,FSA-628-19,Alembic Pharma,21.5,44,7,1.29,98.7,Dr. Pooja Nair,Accepted
+Ganciclovir,26-03-2025,24-02-2027,FSA-115-20,Sun Pharma Ltd,21.8,57,6.9,0.15,98,Dr. Suresh Menon,Accepted
+Darunavir,14-05-2025,18-06-2026,FSA-130-21,Cipla Ltd,24,41,6.6,0.88,99.4,Dr. Kavita Desai,Rejected
+Etravirine,14-08-2025,18-09-2026,FSA-162-22,Dr Reddy’s Laboratories,23.7,43,7.2,1.61,99.6,Dr. Rohan Mehta,Accepted
+Emtricitabine/TDF,13-01-2025,17-02-2026,FSA-359-23,Lupin Pharmaceuticals,25.2,58,6.9,1.33,99.6,Dr. Ayesha Khan,Accepted
+Lamivudine/TDF,19-09-2025,24-10-2026,FSA-368-24,Aurobindo Pharma,22.4,49,6.7,0.22,99.7,Dr. Anil Sharma,Accepted
+Lamivudine/Nevirapine/Zidovudine,02-05-2025,06-06-2026,FSA-839-25,Zydus Lifesciences,22.5,61,6.9,1.52,97.3,Dr. Meera Iyer,Rejected
+Efavirenz/LMV/TDF,22-02-2025,23-01-2027,FSA-249-26,Torrent Pharma,22.6,45,6.8,1.92,97,Dr. Raj Patel,Rejected
+Rifabutin,23-09-2025,24-08-2027,FSA-310-27,Glenmark Pharma,26,44,6.8,0.91,97.1,Dr. Susan Thomas,Accepted
+Dapsone,13-02-2025,14-01-2027,FSA-367-28,Pfizer India,25.9,45,6.6,1.75,99.6,Dr. Vikram Rao,Rejected
+Morphine hydrochloride,23-05-2025,27-06-2026,FSA-195-29,Abbott Healthcare,25.1,43,7,1.78,98.1,Dr. Neha Kulkarni,Accepted
+Isoniazid/Pyridoxine/SMX/TMP,05-09-2025,06-08-2027,FSA-695-30,MSD India,21.9,53,7,1.29,97,Dr. Arjun Malhotra,Rejected
+Itraconazole,16-04-2025,21-05-2026,FSA-695-31,Sanofi India,24.9,42,6.5,1.06,97.6,Dr. Pooja Nair,Accepted
+Amphotericin B,09-04-2025,10-03-2027,FSA-975-32,Bayer Pharma,24.3,50,7.2,1.57,97.2,Dr. Suresh Menon,Rejected
+Atazanavir/Ritonavir,13-09-2025,14-08-2027,FSA-488-33,Novartis India,21.9,52,6.9,0.98,99,Dr. Kavita Desai,Accepted
+Flucytosine,19-07-2025,19-06-2027,FSA-922-34,Roche India,21.7,40,7,1.07,97.1,Dr. Rohan Mehta,Accepted
+Isoniazid/PZA/Rifampicin,24-07-2025,24-06-2027,FSA-643-35,Biocon Ltd,21.5,45,7.1,0.74,97.1,Dr. Ayesha Khan,Accepted
+Cefiderocol,09-09-2025,10-08-2027,FSA-101-36,Alkem Laboratories,22.2,47,7.3,1.46,97.8,Dr. Anil Sharma,Accepted
+Cabotegravir,24-01-2025,28-02-2026,FSA-607-37,Intas Pharmaceuticals,23.1,58,6.8,1.28,99.9,Dr. Meera Iyer,Accepted
+Lenacapavir,13-05-2025,17-06-2026,FSA-249-38,Mankind Pharma,23.9,42,7,0.56,97.3,Dr. Raj Patel,Rejected
+Lamivudine/Nevirapine/Stavudine,14-04-2025,15-03-2027,FSA-515-39,Alembic Pharma,21.2,60,7.1,0.17,98,Dr. Susan Thomas,Accepted
+Lamivudine/Stavudine + Nevirapine,29-08-2025,03-10-2026,FSA-143-40,Sun Pharma Ltd,23.2,44,6.9,0.85,98.2,Dr. Vikram Rao,Accepted
+Lamivudine/Zidovudine + Efavirenz,11-10-2025,15-11-2026,FSA-739-41,Cipla Ltd,21.5,45,6.5,1.29,98.6,Dr. Neha Kulkarni,Accepted
+Lamivudine/Stavudine + Efavirenz,14-08-2025,18-09-2026,FSA-794-42,Dr Reddy’s Laboratories,20.9,65,7.3,0.84,97.5,Dr. Arjun Malhotra,Accepted
+Diethylcarbamazine,05-03-2025,09-04-2026,FSA-748-43,Lupin Pharmaceuticals,22.5,57,7,0.29,97.9,Dr. Pooja Nair,Accepted
+Praziquantel,12-09-2025,13-08-2027,FSA-159-44,Aurobindo Pharma,20.2,54,7.1,0.13,99.3,Dr. Suresh Menon,Accepted
+Mebendazole,06-01-2025,10-02-2026,FSA-837-45,Zydus Lifesciences,22.8,44,6.7,0.83,99,Dr. Kavita Desai,Accepted
+Miltefosine,19-02-2025,26-03-2026,FSA-694-46,Torrent Pharma,21.7,57,7.3,0.11,98.1,Dr. Rohan Mehta,Accepted
+Levonorgestrel,24-07-2025,24-06-2027,FSA-430-47,Glenmark Pharma,22.3,60,7.3,1.39,97.8,Dr. Ayesha Khan,Accepted
+Ethinylestradiol/Levonorgestrel,02-06-2025,07-07-2026,FSA-309-48,Pfizer India,23.7,54,7,0.74,97.6,Dr. Anil Sharma,Accepted
+Medroxyprogesterone acetate,30-03-2025,28-02-2027,FSA-253-49,Abbott Healthcare,22.2,53,7.2,0.47,99.4,Dr. Meera Iyer,Accepted
+Norethisterone enantate,11-02-2025,12-01-2027,FSA-547-50,MSD India,25.2,54,7.2,0.15,99.2,Dr. Raj Patel,Accepted
+Desogestrel/Ethinylestradiol,14-05-2025,14-04-2027,FSA-139-51,Sanofi India,25.1,47,7.2,1.79,98.2,Dr. Susan Thomas,Accepted
+Etonogestrel,09-09-2025,14-10-2026,FSA-186-52,Bayer Pharma,20.3,63,6.9,0.22,97.1,Dr. Vikram Rao,Rejected
+Ferrous fumarate,15-08-2025,19-09-2026,FSA-995-53,Novartis India,20.5,44,6.8,1.69,98.3,Dr. Neha Kulkarni,Rejected
+Misoprostol,19-10-2025,19-09-2027,FSA-447-54,Roche India,21.6,50,6.8,1.89,99.4,Dr. Arjun Malhotra,Accepted
+Oxytocin,23-02-2025,30-03-2026,FSA-192-55,Biocon Ltd,24.6,54,7.3,0.56,99.4,Dr. Pooja Nair,Accepted
+Mifepristone,01-10-2025,05-11-2026,FSA-787-56,Alkem Laboratories,24.5,62,7.3,0.96,99.2,Dr. Suresh Menon,Accepted
+Estradiol valerate/Norethisterone,16-08-2025,20-09-2026,FSA-418-57,Intas Pharmaceuticals,21.7,60,6.9,1.39,99,Dr. Kavita Desai,Accepted
+Magnesium sulphate,18-09-2025,19-08-2027,FSA-375-58,Mankind Pharma,25.3,41,7.1,0.82,97.3,Dr. Rohan Mehta,Rejected
+Carbetocin,17-04-2025,18-03-2027,FSA-493-59,Alembic Pharma,21,43,6.8,1.5,98.3,Dr. Ayesha Khan,Rejected
+Levonorgestrel intra-uterine system,17-07-2025,17-06-2027,FSA-759-60,Sun Pharma Ltd,22.3,47,7,0.62,99.8,Dr. Anil Sharma,Accepted
+Desogestrel,28-04-2025,29-03-2027,FSA-876-61,Cipla Ltd,25,56,7,0.84,98.8,Dr. Meera Iyer,Rejected
+Benzathine benzylpenicillin,04-01-2025,05-12-2026,FSA-305-62,Dr Reddy’s Laboratories,21.2,57,7,0.88,99.7,Dr. Raj Patel,Accepted
+Ethambutol hydrochloride,05-05-2025,05-04-2027,FSA-931-63,Lupin Pharmaceuticals,22.7,49,7.4,1.5,99.7,Dr. Susan Thomas,Accepted
+Ethambutol/Isoniazid,20-04-2025,21-03-2027,FSA-105-64,Aurobindo Pharma,21.9,65,7.3,1.05,97.1,Dr. Vikram Rao,Rejected
+Isoniazid/Rifampicin,19-05-2025,23-06-2026,FSA-820-65,Zydus Lifesciences,25.6,62,6.8,1.44,97.2,Dr. Neha Kulkarni,Rejected
+Ethambutol/INH/PZA/RIF,07-06-2025,12-07-2026,FSA-160-66,Torrent Pharma,22.4,57,7,1.48,99.6,Dr. Arjun Malhotra,Accepted
+Ethionamide,13-05-2025,17-06-2026,FSA-717-67,Glenmark Pharma,22.5,53,6.6,1.63,99.3,Dr. Pooja Nair,Accepted
+Cycloserine,14-07-2025,14-06-2027,FSA-598-68,Pfizer India,21.8,54,7.2,0.38,98.6,Dr. Suresh Menon,Accepted
+Protionamide,23-01-2025,27-02-2026,FSA-608-69,Abbott Healthcare,24.2,62,7.5,0.8,97.7,Dr. Kavita Desai,Accepted
+Para-aminosalicylate (sodium),23-06-2025,28-07-2026,FSA-959-70,MSD India,21.2,57,7,1.15,98.5,Dr. Rohan Mehta,Accepted
+Terizidone,20-01-2025,21-12-2026,FSA-234-71,Sanofi India,24.9,50,7.2,1.54,98.4,Dr. Ayesha Khan,Rejected
+Kanamycin,11-01-2025,15-02-2026,FSA-350-72,Bayer Pharma,24,54,7.3,0.55,97.9,Dr. Anil Sharma,Accepted
+Rifapentine,07-02-2025,14-03-2026,FSA-402-73,Novartis India,23,59,6.7,0.3,98.7,Dr. Meera Iyer,Rejected
+Clofazimine,02-04-2025,03-03-2027,FSA-302-74,Roche India,23.8,50,6.7,0.72,98.1,Dr. Raj Patel,Accepted
+Pyridoxine hydrochloride,28-09-2025,29-08-2027,FSA-276-75,Biocon Ltd,22.3,49,6.7,0.21,98.3,Dr. Susan Thomas,Accepted
+Meropenem,27-05-2025,01-07-2026,FSA-751-76,Alkem Laboratories,22.8,48,6.8,0.56,98.4,Dr. Vikram Rao,Accepted
+Pretomanid,11-02-2025,12-01-2027,FSA-584-77,Intas Pharmaceuticals,22.2,47,6.7,1.97,97,Dr. Neha Kulkarni,Accepted
+Delamanid,22-05-2025,26-06-2026,FSA-640-78,Mankind Pharma,21.7,54,6.7,0.96,98,Dr. Arjun Malhotra,Accepted
+Bedaquiline fumarate,28-10-2025,28-09-2027,FSA-345-79,Alembic Pharma,25.7,45,6.5,0.25,97.1,Dr. Pooja Nair,Rejected
+Nicotine resinate (polacrilex),05-06-2025,10-07-2026,FSA-952-80,Sun Pharma Ltd,23.5,65,6.8,0.2,98.4,Dr. Suresh Menon,Accepted
+Nicotine Patch,05-05-2025,05-04-2027,FSA-655-81,Cipla Ltd,25.8,56,6.8,1.15,98.3,Dr. Kavita Desai,Rejected
+Zanamivir,28-04-2025,02-06-2026,FSA-160-82,Dr Reddy’s Laboratories,22.7,60,7.2,0.82,98.4,Dr. Rohan Mehta,Rejected
+Sofosbuvir,25-06-2025,30-07-2026,FSA-453-83,Lupin Pharmaceuticals,23.8,62,7.4,1.72,97.8,Dr. Ayesha Khan,Accepted
+Daclatasvir,06-03-2025,04-02-2027,FSA-987-84,Aurobindo Pharma,20.2,40,6.6,1.97,97.5,Dr. Anil Sharma,Rejected
+Sofosbuvir/Velpatasvir,14-10-2025,14-09-2027,FSA-966-85,Zydus Lifesciences,20.3,49,6.6,0.65,98.3,Dr. Meera Iyer,Rejected
+Daclatasvir/Sofosbuvir,06-08-2025,07-07-2027,FSA-403-86,Torrent Pharma,24.8,45,6.8,0.2,98.9,Dr. Raj Patel,Accepted
+Tenofovir disoproxil fumarate (HBV),18-06-2025,23-07-2026,FSA-592-87,Glenmark Pharma,22.5,49,7.5,1.73,99.5,Dr. Susan Thomas,Accepted
+Entecavir,08-06-2025,13-07-2026,FSA-519-88,Pfizer India,21.1,46,6.7,1.61,98.2,Dr. Vikram Rao,Accepted
+Artemether/Lumefantrine,27-04-2025,01-06-2026,FSA-288-89,Abbott Healthcare,24.8,45,7,0.65,97.8,Dr. Neha Kulkarni,Accepted
+Amodiaquine/Artesunate,12-07-2025,16-08-2026,FSA-680-90,MSD India,25.2,57,7,1.71,97.3,Dr. Arjun Malhotra,Accepted
+Dihydroartemisinin/Piperaquine,05-01-2025,09-02-2026,FSA-156-91,Sanofi India,25.5,42,7.4,1.17,97.9,Dr. Pooja Nair,Accepted
+Pyrimethamine/Sulfadoxine,01-07-2025,01-06-2027,FSA-727-92,Bayer Pharma,25.5,48,7,0.26,99.4,Dr. Suresh Menon,Accepted
+Primaquine,14-07-2025,14-06-2027,FSA-531-93,Novartis India,25.8,40,6.6,1.05,98.2,Dr. Kavita Desai,Accepted
+Tafenoquine,23-08-2025,24-07-2027,FSA-484-94,Roche India,24.6,56,6.7,0.8,98.2,Dr. Rohan Mehta,Accepted
+Cefiderocol (alt supplier),01-02-2025,15-02-2027,BCH-120-A1,NeoCare Labs Ltd,22,46,6.8,0.5,98,Dr. R. Kulkarni,Accepted
+Clofazimine (capsule form),05-03-2025,10-03-2026,BCH-121-B2,MedSupply Solutions,24,52,7.1,0.9,97,Dr. A. Chatterjee,Accepted
+Pyrazinamide (high strength),12-04-2025,18-04-2027,BCH-122-C3,Sunrise Pharma Pvt Ltd,25,48,6.7,1,99,Dr. S. Iyer,Rejected
+Ethambutol/INH/RIF,20-05-2025,25-05-2026,BCH-123-D4,Cipla Healthcare,23,55,7.2,2,96,Dr. N. Verma,Accepted
+Terizidone (alt batch),03-06-2025,02-06-2027,BCH-124-E5,Dr Reddys Laboratories,26,50,6.9,1,98,Dr. P. Deshmukh,Accepted
+Linezolid (dispersible),11-07-2025,15-07-2026,BCH-125-F6,Nova Meditech,24,49,7,0.4,99,Dr. M. Banerjee,Accepted
+Meropenem (1g vial),19-08-2025,22-08-2027,BCH-126-G7,Apex Biocare,25,53,6.6,2,97,Dr. K. Shah,Rejected
+Bedaquiline fumarate (alt),27-09-2025,30-09-2026,BCH-127-H8,HealWell Pharma,23,47,7.3,0.1,98,Dr. J. Rao,Accepted
+Pretomanid (alt),06-10-2025,05-10-2027,BCH-128-J9,Global Remedies Ltd,22,51,6.8,0.6,99,Dr. L. Mehta,Accepted
+Delamanid (alt),14-11-2025,20-11-2026,BCH-129-K0,Prime Cure Labs,24,54,7.1,0.8,96,Dr. V. Singh,Rejected
+Nicotine Patch (25mg),22-12-2025,28-12-2027,BCH-130-L1,Vertex Pharmaceuticals,25,49,6.7,0.2,98,Dr. C. Thomas,Accepted
+Artemether/Lumefantrine (80/480),08-01-2025,12-01-2027,BCH-131-M2,MedPharma Industries,23,46,7.2,2,99,Dr. H. Gupta,Accepted
+Amodiaquine/Artesunate (peds),16-02-2025,18-02-2026,BCH-132-N3,LifeLine Generics,24,52,6.9,0.1,97,Dr. R. Nair,Accepted
+DHA/Piperaquine (dispersible),24-03-2025,26-03-2027,BCH-133-P4,Astra Life Sciences,26,50,7,1.19,98,Dr. S. Kulshreshtha,Accepted
+Pyrimethamine/Sulfadoxine (dispersible),02-04-2025,01-04-2026,BCH-134-Q5,BlueWave Biotech,22,45,6.8,1.12,99,Dr. T. Menon,Accepted
+Primaquine (dispersible),10-05-2025,14-05-2027,BCH-135-R6,Harmony Medics,25,53,7.3,0.9,97,Dr. G. Pathak,Rejected
+Tafenoquine (peds),18-06-2025,19-06-2026,BCH-136-S7,Zenith Healthcare,23,48,6.6,1.26,98,Dr. Y. Sinha,Accepted
+Oseltamivir (30mg),26-07-2025,30-07-2027,BCH-137-T8,Evergreen Pharma,24,51,7.1,1.18,99,Dr. P. Jadhav,Accepted
+Oseltamivir (45mg),04-08-2025,06-08-2026,BCH-138-U9,Vertex Lifecare,26,55,6.9,2.21,96,Dr. D. Bhosale,Rejected
+Sofosbuvir (generic),12-09-2025,15-09-2027,BCH-139-V0,Galaxy Formulations,23,49,7,1.15,98,Dr. A. Malhotra,Accepted
+Daclatasvir (30mg),20-10-2025,22-10-2026,BCH-140-W1,HealthBridge Pharma,25,47,6.7,1.5,99,Dr. K. Reddy,Accepted
+Daclatasvir (60mg),28-11-2025,30-11-2027,BCH-141-X2,Infinity Med Labs,24,52,7.2,1.69,97,Dr. M. Kulkarni,Accepted
+Sofosbuvir/Velpatasvir (alt),07-12-2025,05-12-2026,BCH-142-Y3,Reliant Biopharma,22,50,6.8,1.15,98,Dr. N. Trivedi,Accepted
+Entecavir (0.5mg),15-01-2025,20-01-2027,BCH-143-Z4,Pioneer Therapeutics,23,46,7.1,1.85,99,Dr. S. Dangi,Accepted
+Entecavir (1mg),23-02-2025,25-02-2026,BCH-144-A5,MetroCare Pharma,24,53,6.9,2.42,97,Dr. R. Gokhale,Rejected
+Artemether/Lumefantrine (dispersible),03-03-2025,02-03-2027,BCH-145-B6,Optima Life Sciences,26,49,7,1.47,98,Dr. J. Rajan,Accepted
+Amodiaquine/Artesunate (67.5/25),11-04-2025,15-04-2026,BCH-146-C7,Crystal Medics,24,48,6.6,1.23,99,Dr. V. Shekhar,Accepted
+Amodiaquine/Artesunate (135/50),19-05-2025,21-05-2027,BCH-147-D8,TruHeal Laboratories,23,51,7.2,3,98,Dr. H. Wagh,Accepted
+Amodiaquine/Artesunate (270/100),27-06-2025,29-06-2026,BCH-148-E9,CarePlus Generics,25,54,6.9,2.85,96,Dr. P. Nanda,Rejected
