@@ -1,6 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils import timezone
 from datetime import datetime
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class Item(models.Model):
     # Basic Medicine Information (existing fields from migration 0002)
@@ -53,6 +56,43 @@ class Item(models.Model):
             return 'warning'
         else:
             return 'safe'
+    
+    @property
+    def is_expired(self):
+        """Check if medicine is expired"""
+        return self.days_until_expiry < 0
+
+class UserProfile(models.Model):
+    """Extended user profile model"""
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    department = models.CharField(max_length=100, blank=True, null=True)
+    employee_id = models.CharField(max_length=50, blank=True, null=True)
+    role = models.CharField(max_length=50, default='inspector')
+    avatar = models.URLField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return f"{self.user.username} - {self.role}"
+    
+    class Meta:
+        ordering = ['-created_at']
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    """Create UserProfile when User is created"""
+    if created:
+        UserProfile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    """Save UserProfile when User is saved"""
+    if hasattr(instance, 'profile'):
+        instance.profile.save()
+    else:
+        UserProfile.objects.create(user=instance)
 
     @property
     def is_expired(self):

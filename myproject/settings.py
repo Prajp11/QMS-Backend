@@ -22,6 +22,8 @@ INSTALLED_APPS = [
     'corsheaders',  # Add CORS headers
     'api',  # Your app
     'rest_framework',  # Django REST Framework
+    'rest_framework_simplejwt',  # JWT Authentication
+    'rest_framework_simplejwt.token_blacklist',  # For token blacklisting
 ]
 
 MIDDLEWARE = [
