@@ -12,6 +12,9 @@ class ItemSerializer(serializers.ModelSerializer):
     expiry_status = serializers.SerializerMethodField()
     is_expired = serializers.SerializerMethodField()
     days_since_manufacture = serializers.SerializerMethodField()
+    quality_score = serializers.SerializerMethodField()
+    quality_grade = serializers.SerializerMethodField()
+    quality_status = serializers.SerializerMethodField()
 
     class Meta:
         model = Item
@@ -22,6 +25,7 @@ class ItemSerializer(serializers.ModelSerializer):
             'contaminant_level', 'active_ingredient_purity', 
             'inspected_by', 'accepted_or_rejected',
             'days_until_expiry', 'expiry_status', 'is_expired', 'days_since_manufacture',
+            'quality_score', 'quality_grade', 'quality_status',
             'created_at', 'updated_at'
         ]
 
@@ -41,6 +45,18 @@ class ItemSerializer(serializers.ModelSerializer):
         """Calculate days since manufacture"""
         today = timezone.now().date()
         return (today - obj.manufacture_date).days
+    
+    def get_quality_score(self, obj):
+        """Get quality score"""
+        return obj.quality_score
+    
+    def get_quality_grade(self, obj):
+        """Get quality grade (A, B, C, D, F)"""
+        return obj.quality_grade
+    
+    def get_quality_status(self, obj):
+        """Get quality status description"""
+        return obj.quality_status
 
 class ItemSummarySerializer(serializers.ModelSerializer):
     """Simplified serializer for list views"""

@@ -382,3 +382,228 @@ class ItemViewSet(viewsets.ModelViewSet):
         }
         
         return Response(stats)
+
+
+# ============================================
+# QUALITY SCORE VIEWS
+# ============================================
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def quality_scores(request):
+    """
+    Get all medicines with quality scores
+    Returns sorted list with quality metrics
+    """
+    try:
+        medicines = Item.objects.all()
+        
+        # Calculate quality scores for all medicines
+        medicine_scores = []
+        for medicine in medicines:
+            medicine_scores.append({
+                'id': medicine.id,
+                'name': medicine.name,
+                'batch_number': medicine.batch_number,
+                'manufacturer': medicine.manufacturer,
+                'category': medicine.category,
+                'supplier': medicine.supplier,
+                'temperature': medicine.temperature,
+                'humidity': medicine.humidity,
+                'ph_level': medicine.ph_level,
+                'contaminant_level': medicine.contaminant_level,
+                'active_ingredient_purity': medicine.active_ingredient_purity,
+                'quality_score': medicine.quality_score,
+                'quality_grade': medicine.quality_grade,
+                'quality_status': medicine.quality_status,
+                'expiry_date': medicine.expiry_date,
+                'days_until_expiry': medicine.days_until_expiry,
+                'expiry_status': medicine.expiry_status
+            })
+        
+        # Sort by quality score (descending - highest first)
+        medicine_scores.sort(key=lambda x: x['quality_score'], reverse=True)
+        
+        return Response({
+            'total': len(medicine_scores),
+            'medicines': medicine_scores
+        })
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to calculate quality scores',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def quality_top_performers(request):
+    """
+    Get top 5 best quality medicines
+    """
+    try:
+        medicines = Item.objects.all()
+        
+        # Calculate quality scores
+        medicine_scores = []
+        for medicine in medicines:
+            medicine_scores.append({
+                'id': medicine.id,
+                'name': medicine.name,
+                'batch_number': medicine.batch_number,
+                'manufacturer': medicine.manufacturer,
+                'supplier': medicine.supplier,
+                'quality_score': medicine.quality_score,
+                'quality_grade': medicine.quality_grade,
+                'quality_status': medicine.quality_status,
+                'temperature': medicine.temperature,
+                'humidity': medicine.humidity,
+                'ph_level': medicine.ph_level,
+                'contaminant_level': medicine.contaminant_level,
+                'active_ingredient_purity': medicine.active_ingredient_purity
+            })
+        
+        # Sort by quality score (descending) and get top 5
+        medicine_scores.sort(key=lambda x: x['quality_score'], reverse=True)
+        top_5 = medicine_scores[:5]
+        
+        return Response({
+            'count': len(top_5),
+            'top_performers': top_5
+        })
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to fetch top performers',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def quality_poor_performers(request):
+    """
+    Get top 5 worst quality medicines (need attention)
+    """
+    try:
+        medicines = Item.objects.all()
+        
+        # Calculate quality scores
+        medicine_scores = []
+        for medicine in medicines:
+            medicine_scores.append({
+                'id': medicine.id,
+                'name': medicine.name,
+                'batch_number': medicine.batch_number,
+                'manufacturer': medicine.manufacturer,
+                'supplier': medicine.supplier,
+                'quality_score': medicine.quality_score,
+                'quality_grade': medicine.quality_grade,
+                'quality_status': medicine.quality_status,
+                'temperature': medicine.temperature,
+                'humidity': medicine.humidity,
+                'ph_level': medicine.ph_level,
+                'contaminant_level': medicine.contaminant_level,
+                'active_ingredient_purity': medicine.active_ingredient_purity
+            })
+        
+        # Sort by quality score (ascending) and get bottom 5
+        medicine_scores.sort(key=lambda x: x['quality_score'])
+        bottom_5 = medicine_scores[:5]
+        
+        return Response({
+            'count': len(bottom_5),
+            'poor_performers': bottom_5
+        })
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to fetch poor performers',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def quality_statistics(request):
+    """
+    Get overall quality statistics
+    """
+    try:
+        medicines = Item.objects.all()
+        total = medicines.count()
+        
+        if total == 0:
+            return Response({
+                'total_medicines': 0,
+                'average_score': 0,
+                'grade_distribution': {},
+                'status_distribution': {}
+            })
+        
+        # Calculate scores for all medicines
+        scores = []
+        grade_count = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0}
+        status_count = {'Excellent': 0, 'Good': 0, 'Fair': 0, 'Poor': 0, 'Failed': 0}
+        
+        for medicine in medicines:
+            score = medicine.quality_score
+            scores.append(score)
+            grade_count[medicine.quality_grade] += 1
+            status_count[medicine.quality_status] += 1
+        
+        average_score = sum(scores) / len(scores)
+        
+        return Response({
+            'total_medicines': total,
+            'average_score': round(average_score, 2),
+            'highest_score': max(scores),
+            'lowest_score': min(scores),
+            'grade_distribution': grade_count,
+            'status_distribution': status_count,
+            'excellent_count': status_count['Excellent'],
+            'good_count': status_count['Good'],
+            'fair_count': status_count['Fair'],
+            'poor_count': status_count['Poor'],
+            'failed_count': status_count['Failed']
+        })
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to calculate quality statistics',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def quality_by_grade(request, grade):
+    """
+    Get medicines filtered by quality grade (A, B, C, D, F)
+    """
+    try:
+        if grade not in ['A', 'B', 'C', 'D', 'F']:
+            return Response({
+                'error': 'Invalid grade. Use A, B, C, D, or F'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        medicines = Item.objects.all()
+        
+        filtered_medicines = []
+        for medicine in medicines:
+            if medicine.quality_grade == grade:
+                serializer = ItemSerializer(medicine)
+                filtered_medicines.append(serializer.data)
+        
+        return Response({
+            'grade': grade,
+            'count': len(filtered_medicines),
+            'medicines': filtered_medicines
+        })
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to filter by grade',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
