@@ -4,7 +4,8 @@ from api.views import (
     ItemViewSet, chat_with_ai, UserRegistrationView, UserLoginView,
     UserLogoutView, UserProfileView, ChangePasswordView, TokenRefreshView,
     UsersListView, auth_check, quality_scores, quality_top_performers,
-    quality_poor_performers, quality_statistics, quality_by_grade
+    quality_poor_performers, quality_statistics, quality_by_grade,
+    acceptance_stats, download_csv_template, bulk_upload_medicines
 )
 
 # Create a router and register the ItemViewSet
@@ -30,6 +31,13 @@ urlpatterns = [
     path('quality-scores/worst/', quality_poor_performers, name='quality_worst_performers'),  # Alias for poor
     path('quality-scores/statistics/', quality_statistics, name='quality_statistics'),
     path('quality-scores/grade/<str:grade>/', quality_by_grade, name='quality_by_grade'),
+    
+    # Batch Acceptance Rate Dashboard
+    path('acceptance-stats/', acceptance_stats, name='acceptance_stats'),
+    
+    # CSV Template & Bulk Upload
+    path('csv-template/', download_csv_template, name='csv_template'),
+    path('bulk-upload/', bulk_upload_medicines, name='bulk_upload'),
     
     # AI Chatbot
     path('chat_with_ai/', chat_with_ai, name='chat_with_ai'),

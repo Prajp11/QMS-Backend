@@ -100,7 +100,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',  # Ensure that authentication is required
+        'rest_framework.permissions.AllowAny',  # Allow public access by default, views specify if auth needed
     ],
 }
 
