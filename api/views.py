@@ -745,6 +745,139 @@ def acceptance_stats(request):
 
 
 # ============================================
+# ENVIRONMENTAL ALERT SYSTEM
+# ============================================
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def alerts_count(request):
+    """
+    Get count of environmental alerts
+    Returns total alerts, critical alerts, and breakdown by type
+    """
+    try:
+        items = Item.objects.all()
+        
+        total_alerts = 0
+        critical_alerts = 0
+        warning_alerts = 0
+        alert_types = {
+            'temperature': 0,
+            'humidity': 0,
+            'contamination': 0,
+            'purity': 0,
+            'ph_level': 0
+        }
+        items_with_alerts = 0
+        
+        for item in items:
+            if item.alerts and len(item.alerts) > 0:
+                items_with_alerts += 1
+                for alert in item.alerts:
+                    total_alerts += 1
+                    
+                    # Count by severity
+                    if alert.get('severity') == 'critical':
+                        critical_alerts += 1
+                    else:
+                        warning_alerts += 1
+                    
+                    # Count by type
+                    alert_type = alert.get('type')
+                    if alert_type in alert_types:
+                        alert_types[alert_type] += 1
+        
+        return Response({
+            'total_alerts': total_alerts,
+            'critical_alerts': critical_alerts,
+            'warning_alerts': warning_alerts,
+            'items_with_alerts': items_with_alerts,
+            'total_items': items.count(),
+            'alert_types': alert_types
+        }, status=status.HTTP_200_OK)
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to count alerts',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def alerts_list(request):
+    """
+    Get list of all items with environmental alerts
+    Query Parameters:
+    - severity: Filter by severity (critical, warning)
+    - type: Filter by alert type (temperature, humidity, contamination, purity, ph_level)
+    - limit: Limit number of results (default: all)
+    """
+    try:
+        severity_filter = request.GET.get('severity')  # 'critical' or 'warning'
+        type_filter = request.GET.get('type')  # alert type
+        limit = request.GET.get('limit')  # number of items to return
+        
+        items = Item.objects.all()
+        items_with_alerts = []
+        
+        for item in items:
+            if item.alerts and len(item.alerts) > 0:
+                # Apply filters
+                filtered_alerts = item.alerts
+                
+                if severity_filter:
+                    filtered_alerts = [a for a in filtered_alerts if a.get('severity') == severity_filter]
+                
+                if type_filter:
+                    filtered_alerts = [a for a in filtered_alerts if a.get('type') == type_filter]
+                
+                # Only include if alerts remain after filtering
+                if filtered_alerts:
+                    items_with_alerts.append({
+                        'id': item.id,
+                        'name': item.name,
+                        'batch_number': item.batch_number,
+                        'manufacturer': item.manufacturer,
+                        'supplier': item.supplier,
+                        'category': item.category,
+                        'alerts': filtered_alerts,
+                        'alert_count': len(filtered_alerts),
+                        'critical_count': sum(1 for a in filtered_alerts if a.get('severity') == 'critical'),
+                        'warning_count': sum(1 for a in filtered_alerts if a.get('severity') == 'warning'),
+                        'quality_score': item.quality_score,
+                        'quality_grade': item.quality_grade,
+                        'temperature': item.temperature,
+                        'humidity': item.humidity,
+                        'contaminant_level': item.contaminant_level,
+                        'active_ingredient_purity': item.active_ingredient_purity,
+                        'ph_level': item.ph_level
+                    })
+        
+        # Sort by alert count (most alerts first)
+        items_with_alerts.sort(key=lambda x: (x['critical_count'], x['alert_count']), reverse=True)
+        
+        # Apply limit if specified
+        if limit:
+            try:
+                limit = int(limit)
+                items_with_alerts = items_with_alerts[:limit]
+            except ValueError:
+                pass
+        
+        return Response({
+            'count': len(items_with_alerts),
+            'items': items_with_alerts
+        }, status=status.HTTP_200_OK)
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to list alerts',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+# ============================================
 # CSV TEMPLATE DOWNLOAD
 # ============================================
 

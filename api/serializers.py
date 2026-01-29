@@ -15,6 +15,9 @@ class ItemSerializer(serializers.ModelSerializer):
     quality_score = serializers.SerializerMethodField()
     quality_grade = serializers.SerializerMethodField()
     quality_status = serializers.SerializerMethodField()
+    has_alerts = serializers.SerializerMethodField()
+    alert_count = serializers.SerializerMethodField()
+    critical_alert_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Item
@@ -26,6 +29,7 @@ class ItemSerializer(serializers.ModelSerializer):
             'inspected_by', 'accepted_or_rejected',
             'days_until_expiry', 'expiry_status', 'is_expired', 'days_since_manufacture',
             'quality_score', 'quality_grade', 'quality_status',
+            'alerts', 'has_alerts', 'alert_count', 'critical_alert_count',
             'created_at', 'updated_at'
         ]
 
@@ -57,6 +61,18 @@ class ItemSerializer(serializers.ModelSerializer):
     def get_quality_status(self, obj):
         """Get quality status description"""
         return obj.quality_status
+    
+    def get_has_alerts(self, obj):
+        """Check if item has alerts"""
+        return obj.has_alerts
+    
+    def get_alert_count(self, obj):
+        """Get total alert count"""
+        return obj.alert_count
+    
+    def get_critical_alert_count(self, obj):
+        """Get critical alert count"""
+        return obj.critical_alert_count
 
 class ItemSummarySerializer(serializers.ModelSerializer):
     """Simplified serializer for list views"""

@@ -31,6 +31,9 @@ class Item(models.Model):
     # Timestamps - new fields
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    
+    # Environmental Alerts
+    alerts = models.JSONField(default=list, blank=True, null=True)
 
     class Meta:
         ordering = ['expiry_date']
@@ -185,6 +188,96 @@ class Item(models.Model):
             return 'Poor'
         else:
             return 'Failed'
+    
+    def generate_alerts(self):
+        """
+        Generate environmental alerts based on critical thresholds
+        Returns: List of alert dictionaries
+        """
+        alerts = []
+        
+        # Temperature alert (Critical if > 30°C)
+        if self.temperature > 30:
+            alerts.append({
+                'type': 'temperature',
+                'severity': 'critical' if self.temperature > 35 else 'warning',
+                'message': f'High temperature detected: {self.temperature}°C (Normal: 20-25°C)',
+                'value': self.temperature,
+                'threshold': 30,
+                'timestamp': timezone.now().isoformat()
+            })
+        
+        # Humidity alert (Critical if > 70%)
+        if self.humidity > 70:
+            alerts.append({
+                'type': 'humidity',
+                'severity': 'critical' if self.humidity > 80 else 'warning',
+                'message': f'High humidity detected: {self.humidity}% (Normal: 40-60%)',
+                'value': self.humidity,
+                'threshold': 70,
+                'timestamp': timezone.now().isoformat()
+            })
+        
+        # Contamination alert (Critical if > 10 ppm)
+        if self.contaminant_level > 10:
+            alerts.append({
+                'type': 'contamination',
+                'severity': 'critical',
+                'message': f'Dangerous contamination level: {self.contaminant_level} ppm (Safe: <0.01 ppm)',
+                'value': self.contaminant_level,
+                'threshold': 10,
+                'timestamp': timezone.now().isoformat()
+            })
+        elif self.contaminant_level > 0.1:
+            alerts.append({
+                'type': 'contamination',
+                'severity': 'warning',
+                'message': f'Elevated contamination level: {self.contaminant_level} ppm (Safe: <0.01 ppm)',
+                'value': self.contaminant_level,
+                'threshold': 0.1,
+                'timestamp': timezone.now().isoformat()
+            })
+        
+        # Low purity alert
+        if self.active_ingredient_purity < 90:
+            alerts.append({
+                'type': 'purity',
+                'severity': 'critical' if self.active_ingredient_purity < 80 else 'warning',
+                'message': f'Low active ingredient purity: {self.active_ingredient_purity}% (Required: >95%)',
+                'value': self.active_ingredient_purity,
+                'threshold': 90,
+                'timestamp': timezone.now().isoformat()
+            })
+        
+        # pH Level alert
+        if self.ph_level < 6.0 or self.ph_level > 8.0:
+            alerts.append({
+                'type': 'ph_level',
+                'severity': 'warning',
+                'message': f'pH level out of range: {self.ph_level} (Normal: 6.5-7.5)',
+                'value': self.ph_level,
+                'threshold': '6.0-8.0',
+                'timestamp': timezone.now().isoformat()
+            })
+        
+        return alerts
+    
+    @property
+    def has_alerts(self):
+        """Check if item has any active alerts"""
+        return self.alerts and len(self.alerts) > 0
+    
+    @property
+    def alert_count(self):
+        """Get count of active alerts"""
+        return len(self.alerts) if self.alerts else 0
+    
+    @property
+    def critical_alert_count(self):
+        """Get count of critical alerts"""
+        if not self.alerts:
+            return 0
+        return sum(1 for alert in self.alerts if alert.get('severity') == 'critical')
 
 class UserProfile(models.Model):
     """Extended user profile model"""
@@ -218,7 +311,17 @@ def save_user_profile(sender, instance, **kwargs):
     else:
         UserProfile.objects.create(user=instance)
 
-    @property
-    def is_expired(self):
-        """Check if medicine is expired"""
-        return self.days_until_expiry < 0
+@receiver(post_save, sender=Item)
+def generate_item_alerts(sender, instance, created, **kwargs):
+    """
+    Auto-generate alerts whenever an Item is created or updated
+    Signal triggers on every save to check environmental conditions
+    """
+    # Generate alerts based on current values
+    new_alerts = instance.generate_alerts()
+    
+    # Only update if alerts have changed
+    if instance.alerts != new_alerts:
+        instance.alerts = new_alerts
+        # Use update to avoid triggering the signal again
+        Item.objects.filter(pk=instance.pk).update(alerts=new_alerts)
