@@ -5,7 +5,8 @@ from api.views import (
     UserLogoutView, UserProfileView, ChangePasswordView, TokenRefreshView,
     UsersListView, auth_check, quality_scores, quality_top_performers,
     quality_poor_performers, quality_statistics, quality_by_grade,
-    acceptance_stats, alerts_count, alerts_list,
+    acceptance_stats, alerts_count, alerts_list, status_statistics,
+    inspector_stats, supplier_stats,
     download_csv_template, bulk_upload_medicines
 )
 
@@ -39,6 +40,13 @@ urlpatterns = [
     # Environmental Alert System
     path('alerts/count/', alerts_count, name='alerts_count'),
     path('alerts/list/', alerts_list, name='alerts_list'),
+    
+    # Status Statistics (Active/Expired/Quarantine)
+    path('status/statistics/', status_statistics, name='status_statistics'),
+    
+    # Inspector & Supplier Performance Analytics
+    path('inspector-stats/', inspector_stats, name='inspector_stats'),
+    path('supplier-stats/', supplier_stats, name='supplier_stats'),
     
     # CSV Template & Bulk Upload
     path('csv-template/', download_csv_template, name='csv_template'),

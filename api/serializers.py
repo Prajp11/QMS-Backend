@@ -26,7 +26,7 @@ class ItemSerializer(serializers.ModelSerializer):
             'quantity', 'manufacturer', 'category', 'price',
             'supplier', 'temperature', 'humidity', 'ph_level', 
             'contaminant_level', 'active_ingredient_purity', 
-            'inspected_by', 'accepted_or_rejected',
+            'inspected_by', 'accepted_or_rejected', 'status',
             'days_until_expiry', 'expiry_status', 'is_expired', 'days_since_manufacture',
             'quality_score', 'quality_grade', 'quality_status',
             'alerts', 'has_alerts', 'alert_count', 'critical_alert_count',

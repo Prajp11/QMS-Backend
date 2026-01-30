@@ -97,7 +97,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # REST Framework and JWT Authentication settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'api.authentication.OptionalJWTAuthentication',  # Custom class that doesn't fail on invalid tokens
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',  # Allow public access by default, views specify if auth needed

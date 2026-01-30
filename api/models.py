@@ -34,6 +34,14 @@ class Item(models.Model):
     
     # Environmental Alerts
     alerts = models.JSONField(default=list, blank=True, null=True)
+    
+    # Status Field for Expiry Management
+    STATUS_CHOICES = [
+        ('active', 'Active'),
+        ('expired', 'Expired'),
+        ('quarantine', 'Quarantine'),
+    ]
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active')
 
     class Meta:
         ordering = ['expiry_date']
@@ -278,6 +286,39 @@ class Item(models.Model):
         if not self.alerts:
             return 0
         return sum(1 for alert in self.alerts if alert.get('severity') == 'critical')
+    
+    def update_status(self):
+        """
+        Auto-update status based on expiry date and quality conditions
+        - expired: Past expiry date
+        - quarantine: Critical quality issues (quality score < 60 or critical alerts)
+        - active: Normal/safe condition
+        """
+        # Check if expired
+        if self.is_expired:
+            return 'expired'
+        
+        # Check for quarantine conditions
+        # 1. Quality score is failing (< 60)
+        if self.quality_score < 60:
+            return 'quarantine'
+        
+        # 2. Has critical environmental alerts
+        if self.critical_alert_count > 0:
+            return 'quarantine'
+        
+        # 3. High contamination (> 1 ppm)
+        if self.contaminant_level > 1:
+            return 'quarantine'
+        
+        # Otherwise, medicine is active
+        return 'active'
+    
+    def save(self, *args, **kwargs):
+        """Override save to auto-update status before saving"""
+        # Auto-update status before saving
+        self.status = self.update_status()
+        super().save(*args, **kwargs)
 
 class UserProfile(models.Model):
     """Extended user profile model"""

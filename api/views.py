@@ -283,15 +283,30 @@ class ItemViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows items to be viewed, added, updated, or deleted.
     Includes search functionality for querying items by specific fields.
+    Supports filtering by status: ?status=active/expired/quarantine
     """
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
     permission_classes = [IsAuthenticated]
 
     filter_backends = [filters.SearchFilter]
-    search_fields = ['name', 'batch_number', 'manufacturer', 'category']
-    ordering_fields = ['name', 'batch_number', 'expiry_date', 'manufacture_date', 'quantity']
+    search_fields = ['name', 'batch_number', 'manufacturer', 'category', 'supplier']
+    ordering_fields = ['name', 'batch_number', 'expiry_date', 'manufacture_date', 'quantity', 'status']
     ordering = ['expiry_date']  # Order by expiry date by default
+    
+    def get_queryset(self):
+        """
+        Override get_queryset to support status filtering
+        Usage: /api/items/?status=expired or ?status=active or ?status=quarantine
+        """
+        queryset = Item.objects.all()
+        
+        # Filter by status if provided
+        status_filter = self.request.query_params.get('status', None)
+        if status_filter:
+            queryset = queryset.filter(status=status_filter)
+        
+        return queryset
     
     def list(self, request, *args, **kwargs):
         """Override list to add error handling"""
@@ -383,6 +398,47 @@ class ItemViewSet(viewsets.ModelViewSet):
         }
         
         return Response(stats)
+
+
+# ============================================
+# EXPIRY STATUS MANAGEMENT
+# ============================================
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def status_statistics(request):
+    """
+    Get statistics for medicine status (active/expired/quarantine)
+    Returns counts and percentages for each status
+    """
+    try:
+        total_items = Item.objects.count()
+        
+        active_count = Item.objects.filter(status='active').count()
+        expired_count = Item.objects.filter(status='expired').count()
+        quarantine_count = Item.objects.filter(status='quarantine').count()
+        
+        return Response({
+            'total_items': total_items,
+            'active': {
+                'count': active_count,
+                'percentage': round((active_count / total_items * 100), 2) if total_items > 0 else 0
+            },
+            'expired': {
+                'count': expired_count,
+                'percentage': round((expired_count / total_items * 100), 2) if total_items > 0 else 0
+            },
+            'quarantine': {
+                'count': quarantine_count,
+                'percentage': round((quarantine_count / total_items * 100), 2) if total_items > 0 else 0
+            }
+        }, status=status.HTTP_200_OK)
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to get status statistics',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 # ============================================
@@ -645,7 +701,11 @@ def acceptance_stats(request):
         if date_from:
             try:
                 date_from_obj = datetime.strptime(date_from, '%Y-%m-%d').date()
-                queryset = queryset.filter(created_at__gte=date_from_obj)
+                # Create timezone-aware datetime
+                date_from_datetime = timezone.make_aware(
+                    datetime.combine(date_from_obj, datetime.min.time())
+                )
+                queryset = queryset.filter(created_at__gte=date_from_datetime)
             except ValueError:
                 return Response({
                     'error': 'Invalid date_from format. Use YYYY-MM-DD'
@@ -654,9 +714,11 @@ def acceptance_stats(request):
         if date_to:
             try:
                 date_to_obj = datetime.strptime(date_to, '%Y-%m-%d').date()
-                # Add one day to include the end date
-                date_to_obj = date_to_obj + timedelta(days=1)
-                queryset = queryset.filter(created_at__lt=date_to_obj)
+                # Add one day to include the end date, make timezone-aware
+                date_to_datetime = timezone.make_aware(
+                    datetime.combine(date_to_obj + timedelta(days=1), datetime.min.time())
+                )
+                queryset = queryset.filter(created_at__lt=date_to_datetime)
             except ValueError:
                 return Response({
                     'error': 'Invalid date_to format. Use YYYY-MM-DD'
@@ -873,6 +935,306 @@ def alerts_list(request):
     except Exception as e:
         return Response({
             'error': 'Failed to list alerts',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+# ============================================
+# INSPECTOR PERFORMANCE ANALYTICS
+# ============================================
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def inspector_stats(request):
+    """
+    Get inspector performance analytics (OPTIMIZED)
+    Returns stats grouped by inspector with:
+    - Average quality score
+    - Total inspections
+    - Current month vs previous month comparison
+    - Trend (up/down/stable)
+    """
+    try:
+        from django.db.models import Avg, Count, Q, Case, When, IntegerField
+        from django.db.models.functions import ExtractMonth, ExtractYear
+        
+        # Get current date
+        today = timezone.now().date()
+        current_month = today.month
+        current_year = today.year
+        
+        # Calculate previous month
+        if current_month == 1:
+            prev_month = 12
+            prev_year = current_year - 1
+        else:
+            prev_month = current_month - 1
+            prev_year = current_year
+        
+        # Get items that have valid inspectors (exclude Unknown)
+        valid_items = Item.objects.exclude(inspected_by='Unknown').exclude(inspected_by='')
+        
+        # Get unique inspectors with their counts
+        inspectors = valid_items.values('inspected_by').annotate(
+            total_inspections=Count('id'),
+            accepted_count=Count(Case(When(accepted_or_rejected__iexact='accepted', then=1)))
+        ).order_by('-total_inspections')[:50]  # Limit to top 50 inspectors
+        
+        inspector_stats = []
+        
+        for inspector in inspectors:
+            inspector_name = inspector['inspected_by']
+            total_inspections = inspector['total_inspections']
+            
+            # Get items for this inspector
+            inspector_items = valid_items.filter(inspected_by=inspector_name)
+            
+            # Sample items to calculate avg score (much faster than all)
+            sample_size = min(100, total_inspections)  # Sample max 100 items
+            sampled_items = list(inspector_items.order_by('?')[:sample_size])
+            
+            # Calculate average quality score from sample
+            if sampled_items:
+                avg_score = round(sum(item.quality_score for item in sampled_items) / len(sampled_items), 2)
+            else:
+                avg_score = 0
+            
+            # Get current month stats
+            current_month_items = list(inspector_items.filter(
+                created_at__month=current_month,
+                created_at__year=current_year
+            )[:50])  # Limit to 50 items
+            
+            current_month_count = len(current_month_items)
+            current_month_avg = round(
+                sum(item.quality_score for item in current_month_items) / len(current_month_items), 2
+            ) if current_month_items else 0
+            
+            # Get previous month stats
+            prev_month_items = list(inspector_items.filter(
+                created_at__month=prev_month,
+                created_at__year=prev_year
+            )[:50])  # Limit to 50 items
+            
+            prev_month_count = len(prev_month_items)
+            prev_month_avg = round(
+                sum(item.quality_score for item in prev_month_items) / len(prev_month_items), 2
+            ) if prev_month_items else 0
+            
+            # Calculate trend
+            if prev_month_avg == 0:
+                trend = 'new'
+                trend_percentage = 0
+            else:
+                diff = current_month_avg - prev_month_avg
+                trend_percentage = round((diff / prev_month_avg * 100), 2) if prev_month_avg > 0 else 0
+                
+                if abs(diff) < 1:
+                    trend = 'stable'
+                elif diff > 0:
+                    trend = 'up'
+                else:
+                    trend = 'down'
+            
+            # Calculate grade distribution (sample)
+            grade_distribution = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0}
+            for item in sampled_items[:20]:  # Only check first 20
+                grade = item.quality_grade
+                grade_distribution[grade] += 1
+            
+            # Get month names
+            month_names = ['', 'January', 'February', 'March', 'April', 'May', 'June',
+                          'July', 'August', 'September', 'October', 'November', 'December']
+            
+            inspector_stats.append({
+                'inspector_name': inspector_name,
+                'total_inspections': total_inspections,
+                'average_quality_score': avg_score,
+                'current_month': {
+                    'average_score': current_month_avg,
+                    'inspections': current_month_count,
+                    'month': f'{month_names[current_month]} {current_year}'
+                },
+                'previous_month': {
+                    'average_score': prev_month_avg,
+                    'inspections': prev_month_count,
+                    'month': f'{month_names[prev_month]} {prev_year}'
+                },
+                'trend': trend,
+                'trend_percentage': trend_percentage,
+                'grade_distribution': grade_distribution,
+                'acceptance_rate': round(
+                    (inspector['accepted_count'] / total_inspections * 100), 2
+                ) if total_inspections > 0 else 0
+            })
+        
+        # Sort by average quality score (best first)
+        inspector_stats.sort(key=lambda x: x['average_quality_score'], reverse=True)
+        
+        return Response({
+            'count': len(inspector_stats),
+            'inspectors': inspector_stats
+        }, status=status.HTTP_200_OK)
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return Response({
+            'error': 'Failed to generate inspector statistics',
+            'details': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def supplier_stats(request):
+    """
+    Get supplier performance analytics (OPTIMIZED)
+    Returns stats grouped by supplier with:
+    - Average quality score
+    - Total batches supplied
+    - Current month vs previous month comparison
+    - Trend (up/down/stable)
+    - Acceptance rate
+    """
+    try:
+        from django.db.models import Avg, Count, Q, Case, When
+        
+        # Get current date
+        today = timezone.now().date()
+        current_month = today.month
+        current_year = today.year
+        
+        # Calculate previous month
+        if current_month == 1:
+            prev_month = 12
+            prev_year = current_year - 1
+        else:
+            prev_month = current_month - 1
+            prev_year = current_year
+        
+        # Get items that have valid suppliers (exclude Unknown)
+        valid_items = Item.objects.exclude(supplier='Unknown').exclude(supplier='')
+        
+        # Get unique suppliers with their counts
+        suppliers = valid_items.values('supplier').annotate(
+            total_batches=Count('id'),
+            accepted_count=Count(Case(When(accepted_or_rejected__iexact='accepted', then=1))),
+            active_count=Count(Case(When(status='active', then=1))),
+            expired_count=Count(Case(When(status='expired', then=1))),
+            quarantine_count=Count(Case(When(status='quarantine', then=1)))
+        ).order_by('-total_batches')[:50]  # Limit to top 50 suppliers
+        
+        supplier_stats = []
+        
+        for supplier in suppliers:
+            supplier_name = supplier['supplier']
+            total_batches = supplier['total_batches']
+            
+            # Get items for this supplier
+            supplier_items = valid_items.filter(supplier=supplier_name)
+            
+            # Sample items to calculate avg score (much faster than all)
+            sample_size = min(100, total_batches)  # Sample max 100 items
+            sampled_items = list(supplier_items.order_by('?')[:sample_size])
+            
+            # Calculate average quality score from sample
+            if sampled_items:
+                avg_score = round(sum(item.quality_score for item in sampled_items) / len(sampled_items), 2)
+            else:
+                avg_score = 0
+            
+            # Get current month stats
+            current_month_items = list(supplier_items.filter(
+                created_at__month=current_month,
+                created_at__year=current_year
+            )[:50])  # Limit to 50 items
+            
+            current_month_count = len(current_month_items)
+            current_month_avg = round(
+                sum(item.quality_score for item in current_month_items) / len(current_month_items), 2
+            ) if current_month_items else 0
+            
+            # Get previous month stats
+            prev_month_items = list(supplier_items.filter(
+                created_at__month=prev_month,
+                created_at__year=prev_year
+            )[:50])  # Limit to 50 items
+            
+            prev_month_count = len(prev_month_items)
+            prev_month_avg = round(
+                sum(item.quality_score for item in prev_month_items) / len(prev_month_items), 2
+            ) if prev_month_items else 0
+            
+            # Calculate trend
+            if prev_month_avg == 0:
+                trend = 'new'
+                trend_percentage = 0
+            else:
+                diff = current_month_avg - prev_month_avg
+                trend_percentage = round((diff / prev_month_avg * 100), 2) if prev_month_avg > 0 else 0
+                
+                if abs(diff) < 1:
+                    trend = 'stable'
+                elif diff > 0:
+                    trend = 'up'
+                else:
+                    trend = 'down'
+            
+            # Calculate grade distribution (sample)
+            grade_distribution = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0}
+            for item in sampled_items[:20]:  # Only check first 20
+                grade = item.quality_grade
+                grade_distribution[grade] += 1
+            
+            # Calculate acceptance rate
+            acceptance_rate = round((supplier['accepted_count'] / total_batches * 100), 2) if total_batches > 0 else 0
+            
+            # Calculate environmental compliance (items without critical alerts)
+            items_with_critical = sum(1 for item in sampled_items if item.critical_alert_count > 0)
+            environmental_compliance = round(((len(sampled_items) - items_with_critical) / len(sampled_items) * 100), 2) if sampled_items else 0
+            
+            # Get month names
+            month_names = ['', 'January', 'February', 'March', 'April', 'May', 'June',
+                          'July', 'August', 'September', 'October', 'November', 'December']
+            
+            supplier_stats.append({
+                'supplier_name': supplier_name,
+                'total_batches': total_batches,
+                'average_quality_score': avg_score,
+                'current_month': {
+                    'average_score': current_month_avg,
+                    'batches': current_month_count,
+                    'month': f'{month_names[current_month]} {current_year}'
+                },
+                'previous_month': {
+                    'average_score': prev_month_avg,
+                    'batches': prev_month_count,
+                    'month': f'{month_names[prev_month]} {prev_year}'
+                },
+                'trend': trend,
+                'trend_percentage': trend_percentage,
+                'grade_distribution': grade_distribution,
+                'acceptance_rate': acceptance_rate,
+                'environmental_compliance': environmental_compliance,
+                'active_batches': supplier['active_count'],
+                'expired_batches': supplier['expired_count'],
+                'quarantined_batches': supplier['quarantine_count']
+            })
+        
+        # Sort by average quality score (best first)
+        supplier_stats.sort(key=lambda x: x['average_quality_score'], reverse=True)
+        
+        return Response({
+            'count': len(supplier_stats),
+            'suppliers': supplier_stats
+        }, status=status.HTTP_200_OK)
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return Response({
+            'error': 'Failed to generate supplier statistics',
             'details': str(e)
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
