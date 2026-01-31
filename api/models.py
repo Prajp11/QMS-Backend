@@ -45,6 +45,14 @@ class Item(models.Model):
 
     class Meta:
         ordering = ['expiry_date']
+        indexes = [
+            models.Index(fields=['supplier']),
+            models.Index(fields=['inspected_by']),
+            models.Index(fields=['accepted_or_rejected']),
+            models.Index(fields=['category']),
+            models.Index(fields=['created_at']),
+            models.Index(fields=['expiry_date']),
+        ]
 
     def __str__(self):
         return f"{self.name} - {self.batch_number}"

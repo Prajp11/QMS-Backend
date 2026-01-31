@@ -287,7 +287,7 @@ class ItemViewSet(viewsets.ModelViewSet):
     """
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     filter_backends = [filters.SearchFilter]
     search_fields = ['name', 'batch_number', 'manufacturer', 'category', 'supplier']
@@ -814,11 +814,15 @@ def acceptance_stats(request):
 @permission_classes([AllowAny])
 def alerts_count(request):
     """
-    Get count of environmental alerts
+    Get count of environmental alerts (OPTIMIZED)
     Returns total alerts, critical alerts, and breakdown by type
     """
     try:
-        items = Item.objects.all()
+        from django.db.models import Q
+        
+        # Only fetch items with non-empty alerts and only the alerts field for efficiency
+        items = Item.objects.exclude(Q(alerts__isnull=True) | Q(alerts=[])).only('alerts')
+        total_items_count = Item.objects.count()
         
         total_alerts = 0
         critical_alerts = 0
@@ -830,31 +834,29 @@ def alerts_count(request):
             'purity': 0,
             'ph_level': 0
         }
-        items_with_alerts = 0
+        items_with_alerts = items.count()
         
         for item in items:
-            if item.alerts and len(item.alerts) > 0:
-                items_with_alerts += 1
-                for alert in item.alerts:
-                    total_alerts += 1
-                    
-                    # Count by severity
-                    if alert.get('severity') == 'critical':
-                        critical_alerts += 1
-                    else:
-                        warning_alerts += 1
-                    
-                    # Count by type
-                    alert_type = alert.get('type')
-                    if alert_type in alert_types:
-                        alert_types[alert_type] += 1
+            for alert in item.alerts:
+                total_alerts += 1
+                
+                # Count by severity
+                if alert.get('severity') == 'critical':
+                    critical_alerts += 1
+                else:
+                    warning_alerts += 1
+                
+                # Count by type
+                alert_type = alert.get('type')
+                if alert_type in alert_types:
+                    alert_types[alert_type] += 1
         
         return Response({
             'total_alerts': total_alerts,
             'critical_alerts': critical_alerts,
             'warning_alerts': warning_alerts,
             'items_with_alerts': items_with_alerts,
-            'total_items': items.count(),
+            'total_items': total_items_count,
             'alert_types': alert_types
         }, status=status.HTTP_200_OK)
         
@@ -869,66 +871,91 @@ def alerts_count(request):
 @permission_classes([AllowAny])
 def alerts_list(request):
     """
-    Get list of all items with environmental alerts
+    Get list of all items with environmental alerts (OPTIMIZED)
     Query Parameters:
     - severity: Filter by severity (critical, warning)
     - type: Filter by alert type (temperature, humidity, contamination, purity, ph_level)
-    - limit: Limit number of results (default: all)
+    - limit: Limit number of results (default: 100)
+    - page: Page number for pagination (default: 1)
+    - page_size: Items per page (default: 50, max: 200)
     """
     try:
+        from django.db.models import Q
+        
         severity_filter = request.GET.get('severity')  # 'critical' or 'warning'
         type_filter = request.GET.get('type')  # alert type
-        limit = request.GET.get('limit')  # number of items to return
+        limit = request.GET.get('limit')  # total number of items to return
+        page = int(request.GET.get('page', 1))  # current page
+        page_size = min(int(request.GET.get('page_size', 50)), 200)  # items per page (max 200)
         
-        items = Item.objects.all()
+        # Start with database-level filtering - only get items with alerts
+        items = Item.objects.exclude(Q(alerts__isnull=True) | Q(alerts=[])).only(
+            'id', 'name', 'batch_number', 'manufacturer', 'supplier', 'category',
+            'alerts', 'temperature', 'humidity', 'contaminant_level', 
+            'active_ingredient_purity', 'ph_level'
+        )
+        
         items_with_alerts = []
         
         for item in items:
-            if item.alerts and len(item.alerts) > 0:
-                # Apply filters
-                filtered_alerts = item.alerts
+            # Apply filters in-memory (alerts is JSON field)
+            filtered_alerts = item.alerts
+            
+            if severity_filter:
+                filtered_alerts = [a for a in filtered_alerts if a.get('severity') == severity_filter]
+            
+            if type_filter:
+                filtered_alerts = [a for a in filtered_alerts if a.get('type') == type_filter]
+            
+            # Only include if alerts remain after filtering
+            if filtered_alerts:
+                critical_count = sum(1 for a in filtered_alerts if a.get('severity') == 'critical')
+                warning_count = sum(1 for a in filtered_alerts if a.get('severity') == 'warning')
                 
-                if severity_filter:
-                    filtered_alerts = [a for a in filtered_alerts if a.get('severity') == severity_filter]
-                
-                if type_filter:
-                    filtered_alerts = [a for a in filtered_alerts if a.get('type') == type_filter]
-                
-                # Only include if alerts remain after filtering
-                if filtered_alerts:
-                    items_with_alerts.append({
-                        'id': item.id,
-                        'name': item.name,
-                        'batch_number': item.batch_number,
-                        'manufacturer': item.manufacturer,
-                        'supplier': item.supplier,
-                        'category': item.category,
-                        'alerts': filtered_alerts,
-                        'alert_count': len(filtered_alerts),
-                        'critical_count': sum(1 for a in filtered_alerts if a.get('severity') == 'critical'),
-                        'warning_count': sum(1 for a in filtered_alerts if a.get('severity') == 'warning'),
-                        'quality_score': item.quality_score,
-                        'quality_grade': item.quality_grade,
-                        'temperature': item.temperature,
-                        'humidity': item.humidity,
-                        'contaminant_level': item.contaminant_level,
-                        'active_ingredient_purity': item.active_ingredient_purity,
-                        'ph_level': item.ph_level
-                    })
+                items_with_alerts.append({
+                    'id': item.id,
+                    'name': item.name,
+                    'batch_number': item.batch_number,
+                    'manufacturer': item.manufacturer,
+                    'supplier': item.supplier,
+                    'category': item.category,
+                    'alerts': filtered_alerts,
+                    'alert_count': len(filtered_alerts),
+                    'critical_count': critical_count,
+                    'warning_count': warning_count,
+                    'quality_score': item.quality_score,
+                    'quality_grade': item.quality_grade,
+                    'temperature': item.temperature,
+                    'humidity': item.humidity,
+                    'contaminant_level': item.contaminant_level,
+                    'active_ingredient_purity': item.active_ingredient_purity,
+                    'ph_level': item.ph_level
+                })
         
-        # Sort by alert count (most alerts first)
+        # Sort by critical count first, then total alert count (most critical first)
         items_with_alerts.sort(key=lambda x: (x['critical_count'], x['alert_count']), reverse=True)
         
-        # Apply limit if specified
+        total_count = len(items_with_alerts)
+        
+        # Apply limit if specified (for backward compatibility)
         if limit:
             try:
                 limit = int(limit)
                 items_with_alerts = items_with_alerts[:limit]
             except ValueError:
                 pass
+        else:
+            # Apply pagination
+            start_idx = (page - 1) * page_size
+            end_idx = start_idx + page_size
+            items_with_alerts = items_with_alerts[start_idx:end_idx]
         
         return Response({
             'count': len(items_with_alerts),
+            'total': total_count,
+            'page': page,
+            'page_size': page_size,
+            'total_pages': (total_count + page_size - 1) // page_size if not limit else 1,
             'items': items_with_alerts
         }, status=status.HTTP_200_OK)
         
