@@ -740,11 +740,11 @@ def acceptance_stats(request):
         # Group rejected items by quality status (calculated in Python)
         reason_map = {}
         for item in rejected_items:
-            status = item.quality_status  # This is a @property, calculated on-the-fly
-            if status in reason_map:
-                reason_map[status] += 1
+            quality_status = item.quality_status  # This is a @property, calculated on-the-fly
+            if quality_status in reason_map:
+                reason_map[quality_status] += 1
             else:
-                reason_map[status] = 1
+                reason_map[quality_status] = 1
         
         # Convert to list and sort by count
         for reason, count in sorted(reason_map.items(), key=lambda x: x[1], reverse=True)[:5]:
